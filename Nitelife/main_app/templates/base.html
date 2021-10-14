@@ -20,12 +20,16 @@
             <h2>Nite Life</h2>
         </div>
          <div>
+            {% if user.is_authenticated %}
             <a class="navbar-item" href="/">Home</a>
             <a class="navbar-item" href="/about">About</a>
             <a class="navbar-item" href="/events">Events</a>
-            <a class="navbar-item" href="/events">Login</a>
-            <a class="navbar-item" href="/events">Signup</a>
-
+            {% if user.is_authenticated %}
+               <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+               <a href="{% url 'login' %}">Log In</a>
+               <a href="{% url 'signup' %}">Sign Up</a>
+            {% endif %}
          </div>
         
       </nav>
