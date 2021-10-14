@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.base import TemplateView
 
 # Create your views here.
@@ -31,4 +31,3 @@ class SignUp(View):
         else:
             context = {'form': form}
             return render(request, 'registration/signup.html', context)
-          
