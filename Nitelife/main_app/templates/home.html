@@ -1,4 +1,34 @@
-{% extends 'base.html' %} {% block content %}
-<h1>Welcome to NiteLife</h1>
+{% extends 'base.html' %}
+{% comment %} for head title tags and helping us with SEO {% endcomment %}
+{% block title %}Events{% endblock  %}
 
+{% block content %}
+<h1>Welcome to NiteLife</h1>
+<div">
+  {% for event in events %}
+  <a href="">
+    <div>
+      <div>
+        <figure>
+          <img src="{{event.image}}" alt="{{event.title}}" />
+        </figure>
+      </div>
+      <div>
+        <p>{{event.title}}</p>
+        <p>{{event.creator}}</p>
+        <p>{{event.location}}</p>
+        <p>{{event.bio}}</p>
+      </div>
+    </div>
+  </a>
+	{% empty %}
+  <article>
+    <div>
+      <p>No Events</p>
+    </div>
+  </article>
+  {% endfor %}
+</div>
 {% endblock %}
+
+
