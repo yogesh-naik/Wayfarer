@@ -17,18 +17,11 @@ class Event(models.Model):
         return self.title
 
 class Profile(models.Model):
-    GENDER_MALE = 1
-    GENDER_FEMALE = 2
-    GENDER_CHOICES = [
-        (GENDER_MALE, _("Male")),
-        (GENDER_FEMALE, _("Female")),
-    ]
-
+    
     efk = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='event', serialize=True, null=True)
     user = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
     avatar = models.CharField(max_length=500, blank=True)
     birthday = models.DateField(null=True, blank=True)
-    gender = models.PositiveSmallIntegerField(choices=GENDER_CHOICES, null=True, blank=True)
     number = models.CharField(max_length=32, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
 
