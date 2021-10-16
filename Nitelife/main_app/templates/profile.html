@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{% comment %} for head title tags and helping us with SEO {% endcomment %}
+<h1>{{profile.user.first_name}}  {{profile.user.last_name}}</h1>
+<h1>{{profile.user}}</h1>
+<br>
+<img {{profile.birthday}}
+  <img src="{{profile.avatar}}" alt="{{profile.avatar}}" />
+  <br>
+<h3>Phone:{{profile.number}}</h3>
+<h3>{{profile.city}}</h3>
+{% endblock%}
