@@ -10,7 +10,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.urls import reverse
 from django.contrib import messages
-from .forms import ProfileForm, form_validation_error
+from .forms import EventForm, ProfileForm, form_validation_error
 
 # Auth
 from django.contrib.auth.decorators import login_required
@@ -69,3 +69,16 @@ class ProfileView(View):
         else:
             messages.error(request, form_validation_error(form))
         return redirect('profile')
+
+
+def createEvent(request):
+    form = EventForm()
+    
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid:
+            form.save()
+            return redirect('/')
+    
+    context = {'form':form}
+    return render(request,"createevent.html",context)
