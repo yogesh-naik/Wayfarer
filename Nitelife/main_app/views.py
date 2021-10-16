@@ -93,7 +93,7 @@ class ProfileView(View):
 class CreateEvent(CreateView):
     model = Event
     fields = ['title', 'location','bio', 'image','guest']
-    template_name = "createevent.html"
+    template_name = "create_event.html"
 
 
     def form_valid(self, form):
@@ -105,4 +105,9 @@ class CreateEvent(CreateView):
         print(self.kwargs)
         # return reverse('event_detail', kwargs={'pk': self.object.pk})
         return reverse("eventlist")
+
+class EventUpdate(UpdateView):
+    model = Eventfields = ['title', 'location','bio', 'image','guest']
+    template_name = "event_update.html"
+    success_url = "/events/"
 
