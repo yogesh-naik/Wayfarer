@@ -95,7 +95,7 @@ class ProfileView(View):
 class CreateEvent(CreateView):
     model = Event
     fields = ['title', 'location','bio', 'image','guest']
-    template_name = "createevent.html"
+    template_name = "create_event.html"
 
 
     def form_valid(self, form):
@@ -117,3 +117,9 @@ class EventDelete(DeleteView):
     model = Event
     template_name = "event_delete.html"
     success_url = "/events/"
+
+class EventUpdate(UpdateView):
+    model = Eventfields = ['title', 'location','bio', 'image','guest']
+    template_name = "event_update.html"
+    success_url = "/events/"
+
