@@ -22,10 +22,16 @@ from django.utils.decorators import method_decorator
 class Home(TemplateView):
     template_name = 'home.html'
 
+
+class EventList(TemplateView):
+    template_name = 'events.html'
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["events"] = Event.objects.all()
         return context
+    
+    
     
 class SignUp(View):
     def get(self, request):
@@ -72,14 +78,33 @@ class ProfileView(View):
         return redirect('profile')
 
 
-def createEvent(request):
-    form = EventForm()
     
-    if request.method == 'POST':
-        form = EventForm(request.POST)
-        if form.is_valid:
-            form.save()
-            return redirect('/')
+# def CreateEvent(request):
+#     form = EventForm()
     
-    context = {'form':form}
-    return render(request,"createevent.html",context)
+#     if request.method == 'POST':
+#         form = EventForm(request.POST)
+#         if form.is_valid:
+#             form.save()
+#             return redirect('/')
+    
+
+#     context = {'form':form}
+#     return render(request,"createevent.html",context)
+
+class CreateEvent(CreateView):
+    model = Event
+    fields = ['title', 'location','bio', 'image','guest']
+    template_name = "createevent.html"
+
+
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super(CreateEvent, self).form_valid(form)
+    
+
+    def get_success_url(self):
+        print(self.kwargs)
+        # return reverse('event_detail', kwargs={'pk': self.object.pk})
+        return reverse("eventlist")
+

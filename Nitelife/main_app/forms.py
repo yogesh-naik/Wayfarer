@@ -22,4 +22,4 @@ def form_validation_error(form):
 class EventForm(ModelForm):
     class Meta:
         model = Event
-        fields = ['creator', 'title', 'location','bio', 'image','guest']
+        fields = ['title', 'location','bio', 'image','guest']
