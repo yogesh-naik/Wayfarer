@@ -23,13 +23,15 @@ class Home(TemplateView):
     template_name = 'home.html'
 
 
-class Event_list(TemplateView):
+class EventList(TemplateView):
     template_name = 'events.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["events"] = Event.objects.all()
         return context
+    
+    
     
 class SignUp(View):
     def get(self, request):
@@ -93,14 +95,9 @@ class CreateEvent(CreateView):
     fields = ['title', 'location','bio', 'image','guest']
     template_name = "createevent.html"
 
-    # When parsing, use event.creator
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["creator"] = Event.objects.filter(creator=self.request.user)
-        return context
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        form.instance.creator = self.request.user
         return super(CreateEvent, self).form_valid(form)
     
 
