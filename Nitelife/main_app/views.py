@@ -75,14 +75,37 @@ class ProfileView(View):
         return redirect('profile')
 
 
-def createEvent(request):
-    form = EventForm()
     
-    if request.method == 'POST':
-        form = EventForm(request.POST)
-        if form.is_valid:
-            form.save()
-            return redirect('/')
+# def CreateEvent(request):
+#     form = EventForm()
     
-    context = {'form':form}
-    return render(request,"createevent.html",context)
+#     if request.method == 'POST':
+#         form = EventForm(request.POST)
+#         if form.is_valid:
+#             form.save()
+#             return redirect('/')
+    
+#     context = {'form':form}
+#     return render(request,"createevent.html",context)
+
+class CreateEvent(CreateView):
+    model = Event
+    fields = ['title', 'location','bio', 'image','guest']
+    template_name = "createevent.html"
+
+    # When parsing, use event.creator
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["creator"] = Event.objects.filter(creator=self.request.user)
+        return context
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CreateEvent, self).form_valid(form)
+    
+
+    def get_success_url(self):
+        print(self.kwargs)
+        # return reverse('event_detail', kwargs={'pk': self.object.pk})
+        return reverse("eventlist")
+
