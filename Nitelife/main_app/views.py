@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.generic.base import TemplateView
-
+from django.views.generic import DetailView
 # Create your views here.
 from django.views import View
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView 
 from .models import (Event, User, Profile)
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -108,3 +108,12 @@ class CreateEvent(CreateView):
         # return reverse('event_detail', kwargs={'pk': self.object.pk})
         return reverse("eventlist")
 
+
+class EventDetail(DetailView):
+    model = Event
+    template_name = "event_detail.html"
+
+class EventDelete(DeleteView):
+    model = Event
+    template_name = "event_delete.html"
+    success_url = "/events/"
