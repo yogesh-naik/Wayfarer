@@ -7,4 +7,5 @@ urlpatterns = [
     path('registration/signup/', views.SignUp.as_view(), name="signup"),
     path('profile/', views.ProfileView.as_view(), name="profile"),
      path('create-event/', views.createEvent, name="createevent"),
+     path('events/', views.Event_list.as_view(), name="eventlist"),
 ]
