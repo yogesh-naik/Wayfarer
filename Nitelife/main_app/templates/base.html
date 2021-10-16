@@ -26,8 +26,8 @@
             
             <a class="navbar-item" href="/">Home</a>
             <a class="navbar-item" href="/about">About</a>
-            <a class="navbar-item" href="/events">Events</a>
-             <a class="navbar-item" href="{% url 'createevent' %}">CreateEvent</a>
+            <a class="navbar-item" href="{% url 'event_list' %}">Events</a>
+             <a class="navbar-item" href="{% url 'create_event' %}">Create Event</a>
             <a class="navbar-item" href="{% url 'profile' %}">Profile</a>
             <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
             {% else %}

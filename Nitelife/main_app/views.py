@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.generic.base import TemplateView
-
+from django.views.generic import DetailView
 # Create your views here.
 from django.views import View
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView 
 from .models import (Event, User, Profile)
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -22,10 +22,16 @@ from django.utils.decorators import method_decorator
 class Home(TemplateView):
     template_name = 'home.html'
 
+
+class EventList(TemplateView):
+    template_name = 'events.html'
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["events"] = Event.objects.all()
         return context
+    
+    
     
 class SignUp(View):
     def get(self, request):
@@ -72,14 +78,48 @@ class ProfileView(View):
         return redirect('profile')
 
 
-def createEvent(request):
-    form = EventForm()
     
-    if request.method == 'POST':
-        form = EventForm(request.POST)
-        if form.is_valid:
-            form.save()
-            return redirect('/')
+# def CreateEvent(request):
+#     form = EventForm()
     
-    context = {'form':form}
-    return render(request,"createevent.html",context)
+#     if request.method == 'POST':
+#         form = EventForm(request.POST)
+#         if form.is_valid:
+#             form.save()
+#             return redirect('/')
+    
+
+#     context = {'form':form}
+#     return render(request,"createevent.html",context)
+
+class CreateEvent(CreateView):
+    model = Event
+    fields = ['title', 'location','bio', 'image','guest']
+    template_name = "create_event.html"
+
+
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super(CreateEvent, self).form_valid(form)
+    
+
+    def get_success_url(self):
+        print(self.kwargs)
+        # return reverse('event_detail', kwargs={'pk': self.object.pk})
+        return reverse("eventlist")
+
+
+class EventDetail(DetailView):
+    model = Event
+    template_name = "event_detail.html"
+
+class EventDelete(DeleteView):
+    model = Event
+    template_name = "event_delete.html"
+    success_url = "/events/"
+
+class EventUpdate(UpdateView):
+    model = Eventfields = ['title', 'location','bio', 'image','guest']
+    template_name = "event_update.html"
+    success_url = "/events/"
+

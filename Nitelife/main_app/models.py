@@ -6,7 +6,7 @@ from django.templatetags.static import static
 
 class Event(models.Model):
 
-    creator = models.ForeignKey(User, on_delete=models.CASCADE, serialize=True, related_name='creator')
+    creator = models.ForeignKey(User, on_delete=models.CASCADE, serialize=True, related_name='creator', null=True)
     title = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
     bio = models.TextField(max_length=500, blank=True)
