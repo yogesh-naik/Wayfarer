@@ -106,7 +106,7 @@ class CreateEvent(CreateView):
     def get_success_url(self):
         print(self.kwargs)
         # return reverse('event_detail', kwargs={'pk': self.object.pk})
-        return reverse("eventlist")
+        return reverse("event_list")
 
 
 class EventDetail(DetailView):

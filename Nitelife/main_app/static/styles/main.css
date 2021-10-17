@@ -1,17 +1,32 @@
+* {
+  color: rebeccapurple;
+}
+html,
 body {
+  font-family: "Rubik", sans-serif;
+}
+
+/* navigation 
+ - show navigation always on the large screen devices with (min-width:1024)
+*/
+
+body {
+    font-family: "Rubik", sans-serif;
     background-color: #121212;
     color: #ffffff;
     min-height: 100vh;
-  }
+}
+h1,
+h2,
+h3 {
+  color: #ffffff;
+}
   
-  h1,
-  h2,
-  h3 {
-    color: #ffffff;
+.title {
+  color: #ffffff;
+}
+@media (min-width: 1024px) {
+  .top-navbar {
+    display: inline-flex !important;
   }
-  
-  .title {
-    color: #ffffff;
-  }
-
-  
+}
