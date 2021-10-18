@@ -1,5 +1,6 @@
 * {
   color: rebeccapurple;
+
 }
 html,
 body {
@@ -25,8 +26,13 @@ h3 {
 .title {
   color: #ffffff;
 }
+
 @media (min-width: 1024px) {
   .top-navbar {
     display: inline-flex !important;
   }
+}
+
+div.container > div > div > div.w-full.max-w-lg > div.leading-loose > form.max-w-sm.m-4.p-10.bg-opacity-25.rounded.shadow-xl {
+  
 }
