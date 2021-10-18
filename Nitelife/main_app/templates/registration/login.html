@@ -9,33 +9,45 @@
 
 <!-- This is an example component -->
 <div class="h-screen font-sans login bg-cover">
-<div class="container mx-auto h-full flex flex-1 justify-center items-center">
+  <div class="container mx-auto h-full flex flex-1 justify-center items-center">
     <div class="w-full max-w-lg">
       <div class="leading-loose">
-        <form class="max-w-sm m-4 p-10 bg-white bg-opacity-25 rounded shadow-xl">
-            <p class="text-white font-medium text-center text-lg font-bold">LOGIN</p>
-              <div class="">
-                <label class="block text-sm text-white" for="username">Username</label>
-                <input class="w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white" type="username" id="username"  placeholder="Enter username" aria-label="email" required>
-              </div>
-              <div class="mt-2">
-                <label class="block  text-sm text-white">Password</label>
-                 <input class="w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white"
-                  type="password" id="password" placeholder="Enter password" required arial-label="password" required>
-              </div>
+        <form
+          class="max-w-sm m-4 p-10 bg-white bg-opacity-25 rounded shadow-xl"
+          method="post"
+          action="{% url 'login' %}"
+        >
+          <p class="banner text-white font-medium text-center text-lg font-bold">
+            Join the Party!
+          </p>
 
-              <div class="mt-4 items-center flex justify-between">
-                <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 hover:bg-gray-800 rounded content-center" id="login-button"
-                  type="submit">Enter</button>
-                <!-- <a class="inline-block right-0 align-baseline font-bold text-sm text-500 text-white hover:text-red-400"
-                  href="#">Forgot your password ?</a> -->
-                  <a href="{% url 'signup' %}" class="inline-block right-0 align-baseline font-light text-sm text-500 hover:text-red-400">
-                      Create Account
-                  </a>
-              </div>
-              <div class="text-center">
-              </div>
+          <div class="px-10">
+           
+           {% csrf_token %} {{form.as_p}}
+          
+          </div>
 
+          <div class=" mt-8 items-center flex justify-around px-10 mb-6">
+
+            <input type="submit" name="login" class="px-6 py-1 text-white font-light tracking-normal bg-gray-900 hover:bg-gray-800 rounded" value="Login" />
+
+            <input type="hidden" name="next" value="{{ next }}" />
+
+            <a
+              href="{% url 'signup' %}"
+              class="
+                inline-block
+                right-0
+                align-baseline
+                font-light
+                text-sm text-500
+                hover:text-red-400
+              "
+            >
+              Create Account
+            </a>
+          </div>
+          <div class="text-center"></div>
         </form>
 
       </div>
