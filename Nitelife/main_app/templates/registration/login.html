@@ -1,10 +1,58 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1 class="title">Login</h1>
+<!-- <h1 class="title">Login</h1>
 <form method="post" action="{% url 'login' %}">
   {% csrf_token %} {{ form.as_p }}
   <input type="submit" class="btn" value="Login" />
   <input type="hidden" name="next" value="{{ next }}" />
-</form>
+</form> -->
+
+<!-- This is an example component -->
+<div class="h-screen font-sans login bg-cover">
+  <div class="container mx-auto h-full flex flex-1 justify-center items-center">
+    <div class="w-full max-w-lg">
+      <div class="leading-loose">
+        <form
+          class="max-w-sm m-4 p-10 bg-white bg-opacity-25 rounded shadow-xl"
+          method="post"
+          action="{% url 'login' %}"
+        >
+          <p class="banner text-white font-medium text-center text-lg font-bold">
+            Join the Party!
+          </p>
+
+          <div class="px-10">
+           
+           {% csrf_token %} {{form.as_p}}
+          
+          </div>
+
+          <div class=" mt-8 items-center flex justify-around px-10 mb-6">
+
+            <input type="submit" name="login" class="px-6 py-1 text-white font-light tracking-normal bg-gray-900 hover:bg-gray-800 rounded" value="Login" />
+
+            <input type="hidden" name="next" value="{{ next }}" />
+
+            <a
+              href="{% url 'signup' %}"
+              class="
+                inline-block
+                right-0
+                align-baseline
+                font-light
+                text-sm text-500
+                hover:text-red-400
+              "
+            >
+              Create Account
+            </a>
+          </div>
+          <div class="text-center"></div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

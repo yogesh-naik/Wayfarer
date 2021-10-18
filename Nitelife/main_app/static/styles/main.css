@@ -1,5 +1,6 @@
 * {
-  color: rebeccapurple;
+  color: rgb(131, 70, 255);
+
 }
 html,
 body {
@@ -25,8 +26,30 @@ h3 {
 .title {
   color: #ffffff;
 }
+
 @media (min-width: 1024px) {
   .top-navbar {
     display: inline-flex !important;
   }
+}
+
+
+#id_password {
+ margin: 10px;
+ display: flex;
+ border-radius: 3px;
+}
+
+#id_username {
+ margin: 10px;
+ display: flex;
+ border-radius: 3px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+div.w-full.max-w-lg > div.leading-loose > form.max-w-sm.m-4.p-10.bg-white.bg-opacity-25.rounded.shadow-xl > label {
+  color:white;
 }
