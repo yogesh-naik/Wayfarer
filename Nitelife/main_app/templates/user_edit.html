@@ -1,9 +1,11 @@
-{% extends 'base.html' %} {% block content %}
-<h1>Update {{events.title}}</h1>
+{% extends 'base.html' %} {% block content %} {% comment %} for head title tags
+and helping us with SEO {% endcomment %}
+
 
 <form action="" method="post">
   {% csrf_token %} {{form.as_p}} 
   <input type="submit" value="Submit" />
 </form>
+
 
 {% endblock %}

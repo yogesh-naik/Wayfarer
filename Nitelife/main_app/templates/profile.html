@@ -2,13 +2,6 @@
 and helping us with SEO {% endcomment %}
 
 <!-- component -->
-<form action="" method="POST">
-    {% csrf_token %} 
-    <input type="text" name="first_name" placeholder="First name"/>
-    <input type="text" name="last_name" placeholder="Last name"/>
-    <input type="text" name="email" placeholder="Email"/>
-    <input type="submit" name="submit" value="Submit"/>
-</form>
 <div
   class="
     h-screen
@@ -52,6 +45,7 @@ and helping us with SEO {% endcomment %}
         <h2 class="text-gray-800 text-3xl font-bold">
           {{profile.user.first_name}}
         </h2>
+        <a href="{% url 'user_edit' profile.pk %}"> edit </a>
         <p class="text-gray-400 mt-2">{{profile.user}}</p>
         <p class="mt-2 text-gray-600">
           Lorem Ipsum is simply dummy text of the printing and typesetting
