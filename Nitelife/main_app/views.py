@@ -65,23 +65,10 @@ class ProfileView(View):
 
 
 @method_decorator(login_required(login_url='login'), name='dispatch')
-class ProfileEdit(UpdateView):
+class ProfileUpdate(UpdateView):
     model = Profile
     fields = ['first_name', 'last_name', 'email', 'city', 'birthday', 'avatar', 'efk']
-    template_name = "profile_edit.html"
-
-            messages.success(request, 'Profile saved successfully')
-        else:
-            messages.error(request, form_validation_error(form))
-        return reverse('profile')
-
-@method_decorator(login_required(login_url='login'), name='dispatch')
-class UserEdit(UpdateView):
-    model = User
-    fields = ['first_name','last_name', 'email']
-    template_name = "user_edit.html"
-
-    success_url = "/profile/"
+    template_name = "profile_update.html"
 
 
 @method_decorator(login_required(login_url='login'), name='dispatch')

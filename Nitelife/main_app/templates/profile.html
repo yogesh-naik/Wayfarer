@@ -40,13 +40,13 @@ and helping us with SEO {% endcomment %}
         alt=""
       />
     </div>
-    <a href="{% url 'profile_edit' profile.pk %}"> edit </a>
+    <a href="{% url 'profile_update' profile.pk %}"> edit </a>
     <div class="">
       <div class="text-center px-14">
         <h2 class="text-gray-800 text-3xl font-bold">
           {{profile.user.first_name}}
         </h2>
-        <a href="{% url 'user_edit' profile.pk %}"> edit </a>
+        <a href="{% url 'profile_update' profile.pk %}"> edit </a>
         <p class="text-gray-400 mt-2">{{profile.user}}</p>
         <p class="mt-2 text-gray-600">
           Lorem Ipsum is simply dummy text of the printing and typesetting
