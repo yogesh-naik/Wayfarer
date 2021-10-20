@@ -20,6 +20,9 @@ class Profile(models.Model):
     
     efk = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='event', serialize=True, null=True)
     user = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=30, blank=False)
+    last_name = models.CharField(max_length=30, blank=False)
+    email = models.EmailField(max_length=50, blank=False)
     avatar = models.CharField(max_length=500, blank=True)
     birthday = models.DateField(null=True, blank=True)
     number = models.CharField(max_length=32, null=True, blank=True)
