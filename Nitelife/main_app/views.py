@@ -62,20 +62,13 @@ class ProfileView(View):
         print(self.profile)
         return render(request, 'profile.html', {'profile': self.profile})
 
-    def post(self, request):
-        form = ProfileForm(request.POST, request.FILES, instance=self.profile)
 
-        if form.is_valid():
-            profile = form.save()
-            profile.user.first_name = form.cleaned_data.get('first_name')
-            profile.user.last_name = form.cleaned_data.get('last_name')
-            profile.user.email = form.cleaned_data.get('email')
-            profile.user.save()
-
-            messages.success(request, 'Profile saved successfully')
-        else:
-            messages.error(request, form_validation_error(form))
-        return redirect('profile')
+@method_decorator(login_required(login_url='login'), name='dispatch')
+class ProfileEdit(UpdateView):
+    model = Profile
+    fields = ['first_name', 'last_name', 'email', 'city', 'birthday', 'avatar', 'efk']
+    template_name = "profile_edit.html"
+    success_url = "/profile/"
 
 
     

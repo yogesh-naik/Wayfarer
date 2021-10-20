@@ -2,13 +2,6 @@
 and helping us with SEO {% endcomment %}
 
 <!-- component -->
-<form action="" method="POST">
-    {% csrf_token %} 
-    <input type="text" name="first_name" placeholder="First name"/>
-    <input type="text" name="last_name" placeholder="Last name"/>
-    <input type="text" name="email" placeholder="Email"/>
-    <input type="submit" name="submit" value="Submit"/>
-</form>
 <div
   class="
     h-screen
@@ -47,6 +40,7 @@ and helping us with SEO {% endcomment %}
         alt=""
       />
     </div>
+    <a href="{% url 'profile_edit' profile.pk %}"> edit </a>
     <div class="">
       <div class="text-center px-14">
         <h2 class="text-gray-800 text-3xl font-bold">
