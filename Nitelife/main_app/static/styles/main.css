@@ -52,3 +52,7 @@ div.w-full.max-w-lg > div.leading-loose > form.max-w-sm.m-4.p-10.bg-white.bg-opa
 div.px-10 > p {
   color: red;
 }
+
+#navigation {
+  background-color: white;
+}

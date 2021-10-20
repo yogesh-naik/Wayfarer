@@ -75,10 +75,16 @@ class ProfileView(View):
             messages.success(request, 'Profile saved successfully')
         else:
             messages.error(request, form_validation_error(form))
-        return redirect('profile')
+        return reverse('profile')
+
+# @method_decorator(login_required(login_url='login'), name='dispatch')
+class UserEdit(UpdateView):
+    model = User
+    fields = ['first_name','last_name', 'email']
+    template_name = "user_edit.html"
+    success_url = "/profile/"
 
 
-    
 # def CreateEvent(request):
 #     form = EventForm()
     
@@ -88,10 +94,10 @@ class ProfileView(View):
 #             form.save()
 #             return redirect('/')
     
-
 #     context = {'form':form}
 #     return render(request,"createevent.html",context)
 
+@method_decorator(login_required(login_url='login'), name='dispatch')
 class CreateEvent(CreateView):
     model = Event
     fields = ['title', 'location','bio', 'image','guest']
@@ -109,17 +115,21 @@ class CreateEvent(CreateView):
         return reverse("event_list")
 
 
+@method_decorator(login_required(login_url='login'), name='dispatch')
 class EventDetail(DetailView):
     model = Event
     template_name = "event_detail.html"
 
+@method_decorator(login_required(login_url='login'), name='dispatch')
 class EventDelete(DeleteView):
     model = Event
     template_name = "event_delete.html"
     success_url = "/events/"
 
+@method_decorator(login_required(login_url='login'), name='dispatch')
 class EventUpdate(UpdateView):
-    model = Eventfields = ['title', 'location','bio', 'image','guest']
+    model = Event
+    fields = ['title', 'location','bio', 'image','guest']
     template_name = "event_update.html"
     success_url = "/events/"
 

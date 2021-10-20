@@ -24,9 +24,10 @@ class Profile(models.Model):
     birthday = models.DateField(null=True, blank=True)
     number = models.CharField(max_length=32, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
-
+    
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)        
+
     class Meta:
         verbose_name = _('Profile')
         verbose_name_plural = _('Profiles')
