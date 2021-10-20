@@ -45,24 +45,20 @@ h3 {
 
 
 #id_password {
- margin: 10px;
  display: flex;
  border-radius: 3px;
 }
 
 #id_username {
- margin: 10px;
  display: flex;
  border-radius: 3px;
 }
 
-label {
-  margin-right: 10px;
-}
 
 div.w-full.max-w-lg > div.leading-loose > form.max-w-sm.m-4.p-10.bg-white.bg-opacity-25.rounded.shadow-xl > label {
   color:white;
 }
+
 #navigation {
 
 
@@ -91,3 +87,9 @@ div.lg\:inline-flex:nth-child(1) {
 /* .top-navbar {
   color: #ff009F;
 } */
+
+
+div.px-10 > p {
+  color: red;
+}
+
