@@ -5,11 +5,17 @@
 {% block content %}
 <h1>NiteLife Events</h1>
 <div>
+  
   <form method="get">
     <ul>
+      <li>
+        <button style="padding: 16px; background-color: orange;" type="submit" class="button" name="location" value="" selected>
+          All Events
+        </button>
+      </li>
       {% for event in events %}
       <li>
-        <button type="submit" class="button" name="genre" value="{{ event.location }}">
+        <button style="padding: 16px; background-color: orange;" type="submit" class="button" name="location" value="{{ event.location }}">
           {{ event.location }}
         </button>
       </li>
