@@ -4,7 +4,19 @@
 
 {% block content %}
 <h1>NiteLife Events</h1>
-<div">
+<div>
+  <form method="get">
+    <ul>
+      {% for event in events %}
+      <li>
+        <button type="submit" class="button" name="genre" value="{{ event.location }}">
+          {{ event.location }}
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+  </form>
+
   {% for event in events %}
   <a href="{% url "event_detail" event.pk %}">
     <div>
