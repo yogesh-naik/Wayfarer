@@ -1,3 +1,4 @@
+import django_filters
 from django.shortcuts import render, redirect
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
@@ -27,11 +28,36 @@ class EventList(TemplateView):
     template_name = 'events.html'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["events"] = Event.objects.all()
+        context = super().get_context_data(**kwargs)      
+        location = self.request.GET.get("location")
+    
+        if location != None:
+            context["events"] = Event.objects.filter(location__icontains=location)
+            context['header'] = location
+        else:
+            context["events"] = Event.objects.all()
+
+        cities = []
+        for e in context['events']:
+            if e.location in cities:
+                None
+            else:
+                cities.append(e.location)
+
+        
+        context['cities'] = cities
+
         return context
-    
-    
+
+class EventFilter(django_filters.FilterSet):
+    # def get_context_data(self, *args, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context["events"] = Event.objects.all()
+    #     context['filter'] = EventList(self.request.GET, queryset=Event.objects.all())
+    #     return context
+    class Meta:
+        model = Event
+        fields = ['location']
     
 class SignUp(View):
     def get(self, request):

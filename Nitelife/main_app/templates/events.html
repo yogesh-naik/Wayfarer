@@ -6,47 +6,32 @@
 <div class='flex flex-row'>
   <section class="flex flex-col w-1/3 border-2 rounded-xl p-4 space-y-4">
     <h1>Select Your City</h1>
-    <!-- {% for city in cities %}
+    
+    <form method="get">
+      <ul>
+        <li>
+          <button class="p-6 bg-pink-400" name="location" value="" selected>
+            All Events
+          </button>
+        </li>
+        {% for city in cities %}
+
+         <li>
+          <button class="p-6 bg-pink-400" type="submit" name="location" value="{{ city }}">
+            {{ city }}
+          </button>
+        </li>
+        {% endfor %}
+      </ul>
+    </form>
     <div>
-      <a href="">
-        <h1>{{city.title}}</h1>
-      </a>
-    </div>
-    {% empty %}
-    <article>
-      <div>
-        <p>No Cities</p>
-      </div>
-    </article>
-    {% endfor %} -->
-  
-    <div class="p-6">
-      <a href="">
-        <h1>Atlanta</h1>
-      </a>
-    </div>
-    <div class="p-6">
-      <a href="">
-        <h1>Chicago</h1>
-      </a>
-    </div>
-    <div class="p-6">
-      <a href="">
-        <h1>San Francisco</h1>
-      </a>
-    </div>
-    <div class="p-6">
-      <a href="">
-        <h1>Boston</h1>
-      </a>
-    </div>
   
   </section>
 
   <section class="flex flex-col border-2 rounded-xl p-4 ml-4 space-y-4">
     <div class="flex flex-row m-4 space-x-2">
         <div>
-          <h1>Atlanta, Georgia</h1>
+          <h1>{{ header }}</h1>
         </div>
         <div>
             <p class="text-right">City Image</p>
