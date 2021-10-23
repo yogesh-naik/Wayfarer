@@ -73,7 +73,7 @@ div.lg\:inline-flex:nth-child(1) {
   border-radius: 0.25em;
   text-shadow: 0 0 0.5em #ff009F;
 } */
-#neon-nav {
+/* #neon-nav {
   font-size: 1em;
   display: inline-block;
   cursor: pointer;
@@ -86,11 +86,22 @@ div.lg\:inline-flex:nth-child(1) {
 
   position:relative;
   transition: background-color 100ms linear;
+} */
+
+#neon-nav {
+  font-size: 1em;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0.25em;
+  margin: .5em;
+  position:relative;
+  transition: background-color 100ms linear;
 }
 
 #neon-nav:hover{
   background-color:#ff009F;
-  color: #121212;
+  color: #ffffff;
   box-shadow: 0px 0px 5px 5px #ff009F;
   text-shadow:
     0 0 82px #ff009F,
@@ -104,13 +115,36 @@ div.px-10 > p {
   color: red;
 }
 
+div.max-w-8xl.mx-auto.px-4.sm:px-6.lg:px-8 {
+  background: #121212;
+  opacity: 20%;
+}
 /* #nav-right-orientation {
   float: right;
 } */
-
 .flex-center {
   background-image: url('nitelife-bg.jpg');
   /* width: 100%;
   height: auto; */
   background-size: cover;
+}
+
+/* #event-form > p{
+  width: 100%;
+  background-color: tomato;
+} */
+#event-form label{
+  margin-bottom: 4px;
+}
+
+#event-form input{
+  width: 100%;
+  margin-bottom: 8px;
+  background-color: transparent;
+  outline: none;
+}
+
+#event-form textarea{
+  width: 100%;
+  background-color: transparent;
 }
