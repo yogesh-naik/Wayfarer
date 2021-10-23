@@ -3,49 +3,66 @@
 {% block title %}Events{% endblock  %}
 
 {% block content %}
-<h1>NiteLife Events</h1>
-<div>
-  
-  <form method="get">
-    <ul>
-      <li>
-        <button style="padding: 16px; background-color: orange;" type="submit" class="button" name="location" value="" selected>
-          All Events
-        </button>
-      </li>
-      {% for event in events %}
-      <li>
-        <button style="padding: 16px; background-color: orange;" type="submit" class="button" name="location" value="{{ event.location }}">
-          {{ event.location }}
-        </button>
-      </li>
-      {% endfor %}
-    </ul>
-  </form>
+<div class='flex flex-row'>
+  <section class="flex flex-col w-1/3 border-2 rounded-xl p-4 space-y-4">
+    <h1>Select Your City</h1>
+    
+    <form method="get">
+      <ul>
+        <li>
+          <button class="p-6 bg-pink-400" name="location" value="" selected>
+            All Events
+          </button>
+        </li>
+        {% for city in cities %}
 
-  {% for event in events %}
-  <a href="{% url "event_detail" event.pk %}">
+         <li>
+          <button class="p-6 bg-pink-400" type="submit" name="location" value="{{ city }}">
+            {{ city }}
+          </button>
+        </li>
+        {% endfor %}
+      </ul>
+    </form>
     <div>
-      <div>
-        <figure>
-          <img src="{{event.image}}" alt="{{event.title}}" />
-        </figure>
-      </div>
-      <div>
-        <p>{{event.title}}</p>
-        <p>{{event.creator}}</p>
-        <p>{{event.location}}</p>
-        <p>{{event.bio}}</p>
-      </div>
+  
+  </section>
+
+  <section class="flex flex-col border-2 rounded-xl p-4 ml-4 space-y-4">
+    <div class="flex flex-row m-4 space-x-2">
+        <div>
+          <h1>{{ header }}</h1>
+        </div>
+        <div>
+            <p class="text-right">City Image</p>
+        </div>
     </div>
-  </a>
-	{% empty %}
-  <article>
+
+    <h1 class='text-left text-xl'>Parties</h1>
+
+    {% for event in events %}
     <div>
-      <p>No Events</p>
+      <a href="{% url "event_detail" event.pk %}">
+      <figure class="w-10 h-10">
+        <img class="rounded-xl" src="{{event.image}}" alt="{{event.title}}" />
+      </figure>
+      <label>
+        {{event.title}}
+      </label>
+      <details>
+        {{event.bio}}
+      </details>
+    </a>
     </div>
-  </article>
-  {% endfor %}
+
+    {% empty %}
+    <article>
+      <div>
+        <p>No Events</p>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
 </div>
 {% endblock %}
 
