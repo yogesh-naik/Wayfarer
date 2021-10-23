@@ -8,21 +8,18 @@
     <h1>Select Your City</h1>
     
     <form method="get">
-      <ul>
-        <li>
-          <button class="p-6 bg-pink-400" name="location" value="" selected>
-            All Events
-          </button>
-        </li>
-        {% for city in cities %}
+      <div class="flex flex-col">
+        <button class="mt-2 p-6 rounded-xl bg-pink-300" name="location" value="" selected>
+          All
+        </button>
+      {% for city in cities %}
+        <button class="mt-2 p-6 rounded-xl bg-pink-300" type="submit" name="location" value="{{ city }}">
+          {{ city }}
+        </button>
 
-         <li>
-          <button class="p-6 bg-pink-400" type="submit" name="location" value="{{ city }}">
-            {{ city }}
-          </button>
-        </li>
-        {% endfor %}
-      </ul>
+      {% endfor %}
+
+      </div>
     </form>
     <div>
   
@@ -30,29 +27,39 @@
 
   <section class="flex flex-col border-2 rounded-xl w-2/3 p-4 ml-4 space-y-4">
     <div class="flex flex-row m-4 space-x-2">
-        <div>
+          {% if header %}
           <h1>{{ header }}</h1>
-          <a class="" href="/events/new">+</a>
-        </div>
-        <div>
-            <p class="text-right">City Image</p>
-        </div>
-    </div>
+          
+          {% else %}
+          <h1>All</h1>
+          {% endif %}
 
+          <div>
+            <p class="text-right">City Image</p>
+          </div>
+        </div>
+        
+    <a class="" href="/events/new">+</a>
     <h1 class='text-left text-xl'>Parties</h1>
 
     {% for event in events %}
     <div>
-      <a href="{% url "event_detail" event.pk %}">
-      <figure class="w-10 h-10">
-        <img class="rounded-xl" src="{{event.image}}" alt="{{event.title}}" />
-      </figure>
-      <label>
-        {{event.title}}
-      </label>
-      <details>
-        {{event.bio}}
-      </details>
+      <span>
+        <a href="{% url "event_detail" event.pk %}">
+        <figure class="w-20 h-20">
+          <img class="rounded-xl" src="{{event.image}}" alt="{{event.title}}" />
+        </figure>
+
+        <div>
+          <label>
+            {{event.title}}
+          </label>
+          <details>
+            {{event.bio}}
+          </details>
+
+        </div>
+      </span>
     </a>
     </div>
 
