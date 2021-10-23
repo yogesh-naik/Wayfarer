@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'main_app' ,
     'tailwind',
     'theme',
-    'django_filters'
-
 ]
 
 MIDDLEWARE = [
