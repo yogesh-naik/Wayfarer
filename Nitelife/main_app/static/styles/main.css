@@ -107,3 +107,10 @@ div.px-10 > p {
 /* #nav-right-orientation {
   float: right;
 } */
+
+.flex-center {
+  background-image: url('nitelife-bg.jpg');
+  /* width: 100%;
+  height: auto; */
+  background-size: cover;
+}
