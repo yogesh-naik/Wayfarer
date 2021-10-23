@@ -15,7 +15,7 @@
       <script src="{% static 'scripts/main.js' %}" defer></script>
       <title>EventNav - {% block title %}{% endblock %}</title>
    </head>
-   <body>
+   <body class="flex-center">
       {% comment %} <div class="bg-fixed ..." style="background-image: url(..)"></div> {% endcomment %}
       
       <nav class="Navbar">
@@ -43,7 +43,8 @@
             </div>
          </div>
       </nav>
-      <div class="flex-center my-16 text-center">
+      <div>
+      {% comment %} <div style="background-image: url('Pearlescent-Pattern-5K-001.jpg')"> {% endcomment %}
          {% block content %}{% endblock %}
       </div>
       
