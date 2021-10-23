@@ -3,31 +3,71 @@
 {% block title %}Events{% endblock  %}
 
 {% block content %}
-<h1>NiteLife Events</h1>
-<div">
-  {% for event in events %}
-  <a href="{% url "event_detail" event.pk %}">
+<div class='flex flex-row'>
+  <section class="flex flex-col w-1/3 border-2 rounded-xl p-4 space-y-4">
+    <h1>Select Your City</h1>
+    <!-- {% for city in cities %}
     <div>
-      <div>
-        <figure>
-          <img src="{{event.image}}" alt="{{event.title}}" />
-        </figure>
-      </div>
-      <div>
-        <p>{{event.title}}</p>
-        <p>{{event.creator}}</p>
-        <p>{{event.location}}</p>
-        <p>{{event.bio}}</p>
-      </div>
+      <a href="">
+        <h1>{{city.title}}</h1>
+      </a>
     </div>
-  </a>
-	{% empty %}
-  <article>
-    <div>
-      <p>No Events</p>
+    {% empty %}
+    <article>
+      <div>
+        <p>No Cities</p>
+      </div>
+    </article>
+    {% endfor %} -->
+  
+    <div class="p-6">
+      <a href="">
+        <h1>Atlanta</h1>
+      </a>
     </div>
-  </article>
-  {% endfor %}
+    <div class="p-6">
+      <a href="">
+        <h1>Chicago</h1>
+      </a>
+    </div>
+    <div class="p-6">
+      <a href="">
+        <h1>San Francisco</h1>
+      </a>
+    </div>
+    <div class="p-6">
+      <a href="">
+        <h1>Boston</h1>
+      </a>
+    </div>
+  
+  </section>
+
+  <section>
+    {% for event in events %}
+    <a href="{% url "event_detail" event.pk %}">
+      <div>
+        <div>
+          <figure>
+            <img src="{{event.image}}" alt="{{event.title}}" />
+          </figure>
+        </div>
+        <div>
+          <p>{{event.title}}</p>
+          <p>{{event.creator}}</p>
+          <p>{{event.location}}</p>         
+          <p>{{event.bio}}</p>
+        </div>
+      </div>
+    </a>
+    {% empty %}
+    <article>
+      <div>
+        <p>No Events</p>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
 </div>
 {% endblock %}
 
