@@ -43,23 +43,33 @@
   
   </section>
 
-  <section>
+  <section class="flex flex-col border-2 rounded-xl p-4 ml-4 space-y-4">
+    <div class="flex flex-row m-4 space-x-2">
+        <div>
+          <h1>Atlanta, Georgia</h1>
+        </div>
+        <div>
+            <p class="text-right">City Image</p>
+        </div>
+    </div>
+
+    <h1 class='text-left text-xl'>Parties</h1>
+
     {% for event in events %}
-    <a href="{% url "event_detail" event.pk %}">
-      <div>
-        <div>
-          <figure>
-            <img src="{{event.image}}" alt="{{event.title}}" />
-          </figure>
-        </div>
-        <div>
-          <p>{{event.title}}</p>
-          <p>{{event.creator}}</p>
-          <p>{{event.location}}</p>         
-          <p>{{event.bio}}</p>
-        </div>
-      </div>
+    <div>
+      <a href="{% url "event_detail" event.pk %}">
+      <figure class="w-10 h-10">
+        <img class="rounded-xl" src="{{event.image}}" alt="{{event.title}}" />
+      </figure>
+      <label>
+        {{event.title}}
+      </label>
+      <details>
+        {{event.bio}}
+      </details>
     </a>
+    </div>
+
     {% empty %}
     <article>
       <div>
