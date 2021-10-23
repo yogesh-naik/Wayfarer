@@ -5,6 +5,22 @@
 {% block content %}
 <h1>NiteLife Events</h1>
 <div">
+  <form method="get">
+    <ul>
+      <li>
+        <button style="padding: 16px; background-color: orange;" type="submit" class="button" name="location" value="" selected>
+          All Events
+        </button>
+      </li>
+      {% for event in events %}
+      <li>
+        <button style="padding: 16px; background-color: orange;" type="submit" class="button" name="location" value="{{ event.location }}">
+          {{ event.location }}
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+  </form>
   {% for event in events %}
   <a href="{% url "event_detail" event.pk %}">
     <div>

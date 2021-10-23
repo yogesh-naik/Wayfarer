@@ -27,8 +27,12 @@ class EventList(TemplateView):
     template_name = 'events.html'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["events"] = Event.objects.all()
+        context = super().get_context_data(**kwargs)      
+        location = self.request.GET.get("location")
+        if location != None:
+            context["events"] = Event.objects.filter(location__icontains=location)
+        else:
+            context["events"] = Event.objects.all()
         return context
     
     
