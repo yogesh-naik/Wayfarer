@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_app' ,
     'tailwind',
-    'theme'
+    'theme',
+    'django_filters'
+
 ]
 
 MIDDLEWARE = [
@@ -139,3 +141,7 @@ INTERNAL_IPS = [
 ]
 
 NPM_BIN_PATH = '/usr/local/bin/npm'
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
