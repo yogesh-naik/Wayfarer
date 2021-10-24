@@ -91,12 +91,14 @@ class ProfileUpdate(UpdateView):
 @method_decorator(login_required(login_url='login'), name='dispatch')
 class CreateEvent(CreateView):
     model = Event
-    fields = ['title', 'location','bio', 'image','guest']
+    fields = ['title', 'location','bio', 'image']
     template_name = "create_event.html"
 
 
+
     def form_valid(self, form):
-        form.instance.creator = self.request.user
+        profile = Profile.objects.get(user=self.request.user)
+        form.instance.creator = profile
         return super(CreateEvent, self).form_valid(form)
     
 
@@ -120,7 +122,7 @@ class EventDelete(DeleteView):
 @method_decorator(login_required(login_url='login'), name='dispatch')
 class EventUpdate(UpdateView):
     model = Event
-    fields = ['title', 'location','bio', 'image','guest']
+    fields = ['title', 'location','bio', 'image']
     template_name = "event_update.html"
     success_url = "/events/"
 
