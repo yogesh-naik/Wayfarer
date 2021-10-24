@@ -102,6 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_PROFILE_MODULE='yourprofileapp.ProfileModel'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

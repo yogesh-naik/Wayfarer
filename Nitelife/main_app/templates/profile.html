@@ -69,4 +69,14 @@ and helping us with SEO {% endcomment %}
     </div>
   </div>
 </div>
+
+<div>
+  <ul>
+    {% for event in profile.creator.all %}
+    <li>
+      {{event}}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock%}
