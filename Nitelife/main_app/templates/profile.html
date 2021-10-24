@@ -46,6 +46,8 @@ and helping us with SEO {% endcomment %}
         <h2 class="text-gray-800 text-3xl font-bold">
           {{profile.user.first_name}}
         </h2>
+
+        
         <a href="{% url 'profile_update' profile.pk %}"> edit </a>
         <p class="text-gray-400 mt-2">{{profile.user}}</p>
         <p class="mt-2 text-gray-600">
