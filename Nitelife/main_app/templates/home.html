@@ -3,7 +3,61 @@
 {% block title %}Events{% endblock  %}
 
 {% block content %}
-<h1>Welcome to NiteLife</h1>
+
+   <head>
+    <title>Tailwind CSS Carousel</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
+     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+</head>
+
+{% comment %} <div class="">
+<h1 class="text-center font-semibold text-3xl lg:text-4xl text-white" id="welcome-txt" >Welcome to NiteLife.</h1>
+<br>
+<p id="welcome-para" class="text-center">A handcrafted, small-batch, artisinal pour-over version of<br> the classic lorem ipsum generator, Hipster Ipsum will give<br> your mocks that blue collar touch.</p>
+</p>
+</div> {% endcomment %}
+
+ <body>
+<div class="swiper mySwiper">
+   <div class="swiper-wrapper">
+      <div class="swiper-slide">
+         <div class="">
+            <h1 class="text-center font-semibold text-3xl lg:text-4xl text-white" id="welcome-txt" >Welcome to NiteLife.</h1>
+            <br>
+            <p id="welcome-para" class="text-center">A handcrafted, small-batch, artisinal pour-over version of<br> the classic lorem ipsum generator, Hipster Ipsum will give<br> your mocks that blue collar touch.</p>
+            </p>
+         </div>
+      </div>
+      <div class="swiper-slide" id="test">
+         <div class="">
+            <h1 class="text-center font-semibold text-3xl lg:text-4xl text-white" id="welcome-txt" >Join Parties in Cities!</h1>
+            <br>
+            <p id="welcome-para" class="text-center">San Francisco,Atlanta,Boston,New York</p>
+            </p>
+         </div>
+      </div>
+      <div class="swiper-slide">
+         <h1 class="text-center font-semibold text-3xl lg:text-4xl text-white" id="welcome-txt" >Make your Life Happy</h1>
+         <br>
+         <p id="welcome-para" class="text-center">Put Covid memories behind you!!<br>Come, Dance, Drink, Enjoy and share happiness!</p>
+         </p>
+      </div>
+   </div>
+   <div class="swiper-button-next"></div>
+   <div class="swiper-button-prev"></div>
+</div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+  </body>
+
 {% endblock %}
-
-

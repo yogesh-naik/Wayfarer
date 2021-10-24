@@ -11,7 +11,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.urls import reverse
 from django.contrib import messages
-from .forms import EventForm, ProfileForm, form_validation_error
+from .forms import form_validation_error, ProfileUpdateForm, UserCreationForm, UserUpdateForm
 
 # Auth
 from django.contrib.auth.decorators import login_required
@@ -65,6 +65,27 @@ class SignUp(View):
         else:
             context = {'form': form}
             return render(request, 'registration/signup.html', context)
+    
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(request, f'Your account has been updated!')
+            return redirect('profile')
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+
+    context = {
+        'u_form': u_form,
+        'p_form': p_form
+    }
+
+    return render(request, 'users/profile.html', context)
 
 @method_decorator(login_required(login_url='login'), name='dispatch')
 class ProfileView(View):
@@ -94,14 +115,11 @@ class CreateEvent(CreateView):
     fields = ['title', 'location','bio', 'image']
     template_name = "create_event.html"
 
-
-
     def form_valid(self, form):
         profile = Profile.objects.get(user=self.request.user)
         form.instance.creator = profile
         return super(CreateEvent, self).form_valid(form)
     
-
     def get_success_url(self):
         print(self.kwargs)
         # return reverse('event_detail', kwargs={'pk': self.object.pk})

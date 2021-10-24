@@ -1,16 +1,26 @@
 from django import forms
-from .models import Event, Profile
-from django.forms import ModelForm
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from .models import Profile
 
-class ProfileForm(forms.ModelForm):
-    first_name = forms.CharField(max_length=255)
-    last_name = forms.CharField(max_length=255)
+class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
 
     class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+
+class UserUpdateForm(forms.ModelForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ['username', 'email']
+
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
         model = Profile
-        fields = '__all__'
-        exclude = ['user']
+        fields = ['first_name', 'last_name', 'email', 'city']
 
 def form_validation_error(form):
     msg = ""
@@ -18,8 +28,3 @@ def form_validation_error(form):
         for error in field.errors:
             msg += "%s: %s \\n" % (field.label if hasattr(field, 'label') else 'Error', error)
     return msg
-
-class EventForm(ModelForm):
-    class Meta:
-        model = Event
-        fields = ['title', 'location','bio', 'image']

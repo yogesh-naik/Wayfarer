@@ -161,6 +161,18 @@ div.max-w-8xl.mx-auto.px-4.sm:px-6.lg:px-8 {
   background-color: transparent;
 }
 
-/* #city-selection > button:hover {
-  background-color: violet;
-} */
+#welcome-txt {
+  font: Satoshi;
+  font-weight:700;
+  font-size: 144px;
+  padding-top:2em;
+}
+
+#welcome-para {
+  padding-top:1em;
+  font: Nimbus Sans;
+  font-weight:400;
+  font-size: 24px;
+  line-height: 28.8px;
+}
+
