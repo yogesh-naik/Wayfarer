@@ -1,3 +1,4 @@
+import os
 """
 Django settings for Nitelife project.
 
@@ -144,3 +145,9 @@ NPM_BIN_PATH = '/usr/local/bin/npm'
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
+
+# Base url to serve media files
+MEDIA_URL = '/media/'
+
+# Path where media is stored</span>
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
