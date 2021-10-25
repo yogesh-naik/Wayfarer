@@ -11,7 +11,7 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=30, blank=False)
     last_name = models.CharField(max_length=30, blank=False)
     email = models.EmailField(max_length=50, blank=False)
-    avatar = models.CharField(max_length=500, blank=True)
+    avatar = models.ImageField(upload_to="p_image", blank=True)
     birthday = models.DateField(null=True, blank=True)
     number = models.CharField(max_length=32, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
@@ -33,3 +33,4 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
