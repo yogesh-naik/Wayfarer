@@ -2,8 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext as _
 from django.templatetags.static import static
+import os
 
-
+def get_image_path(instance, filename):
+    return os.path.join('users', str(instance.id), filename)
 
 class Profile(models.Model):
     
@@ -11,7 +13,7 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=30, blank=False)
     last_name = models.CharField(max_length=30, blank=False)
     email = models.EmailField(max_length=50, blank=False)
-    avatar = models.ImageField(upload_to="p_image", blank=True)
+    avatar = models.ImageField(upload_to=get_image_path, blank=True, null=True)
     birthday = models.DateField(null=True, blank=True)
     number = models.CharField(max_length=32, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
