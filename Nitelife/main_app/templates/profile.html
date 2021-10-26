@@ -2,89 +2,52 @@
 and helping us with SEO {% endcomment %}
 
 
-
+<!-- This is an example component -->
 
 <!-- component -->
-<div
-  class="
-    h-screen
-    flex flex-wrap
-    items-center
-    justify-center
-  "
->
-  <div
-    class="
-      container
-      lg:w-2/6
-      xl:w-2/7
-      sm:w-full
-      md:w-2/3
-      bg-white
-      shadow-lg
-      transform
-      duration-200
-      easy-in-out
-    "
-  >
-
-  
-
-
-    <div class="h-32 overflow-hidden">
-      <img
-        class="w-full"
-        src="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
-        alt=""
-      />
+<!-- This is an example component -->
+<div class="w-screen ">
+    <div class="flex pb-10 glass-header">
+            <img src="https://images.pexels.com/photos/3278968/pexels-photo-3278968.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                class="h-40 w-40 rounded-full object-cover"
+                alt="username"/>
+            <div class="ml-10">
+                <div class="flex items-center">
+                    <h2 class="block leading-relaxed font-light text-gray-700 text-3xl">{{profile.user}}</h2>
+                    <a class="cursor-pointer ml-2 p-1 border-transparent text-gray-700 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600"
+                    aria-label="Notifications" href="{% url 'profile_update' profile.pk %}">
+                        <svg class="h-8 w-8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </a>
+                </div>
+                    <!-- <li>
+                        <span class="block text-base flex"><span class="font-bold mr-2">23 </span> Posts</span>
+                    </li> -->
+                <br>
+                <div class="">
+                    <span class="text-base">{{profile.bio}}</span>
+                </div>
+            </div>
     </div>
-
-     <div class="flex justify-center px-5 -mt-12">
-      <img
-        class="h-32 w-32 bg-white p-2 rounded-full"
-        src="{{profile.avatar.url}}"
-        alt=""
-      />
-    </div>
-   
-    <a href="{% url 'profile_update' profile.pk %}" style='color:blue;'> edit </a>
-  
-
-    <div class="">
-      <div class="text-center px-14">
-        <h2 class="text-gray-800 text-3xl font-bold">
-          {{profile.user.first_name}}
-        </h2>
-
-         
-        
-        <p class="text-gray-400 mt-2">{{profile.user}}</p>
-        <p class="mt-2 text-gray-600">
-          {{profile.user.city}}
-        </p>
+    <div class="border-b border-gray-300"></div>
+ 
+    <div class="clearfix">
+      <article class="mt-5 grid grid-cols-3 gap-6">
+        {% for event in profile.creator.all %}
+        <div class="cursor-pointer relative" style="width:300px; height:300px">
+          <a href="{% url "event_detail" event.pk %}">
+          <img src="{{event.image}}"
+          class="foto w-full h-full object-cover"
+          alt="description" />
+        </a>
       </div>
-      <hr class="mt-6" />
-      <div class="flex bg-gray-50">
-        <div class="text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer">
-          <p><span class="font-semibold">2.5 k </span> Followers</p>
-        </div>
-        <div class="border"></div>
-        <div class="text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer">
-          <p><span class="font-semibold">2.0 k </span> Following</p>
-        </div>
-      </div>
+      {% endfor %}
+    </article>
     </div>
-  </div>
-</div>
+    
+    
+{% endblock %}
 
-<div>
-  <ul>
-    {% for event in profile.creator.all %}
-    <li>
-      <a href="{% url "event_detail" event.pk %}"> {{event}}</a>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
 
-{% endblock%}

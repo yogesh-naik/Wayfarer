@@ -176,3 +176,25 @@ div.max-w-8xl.mx-auto.px-4.sm:px-6.lg:px-8 {
   line-height: 28.8px;
 }
 
+body > div > div > div.flex.justify-center.pb-10 {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+body > div > div > div > article > div > a > img{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+
+.glass-header {
+background: rgba( 92, 14, 14, 0.2 ) !important;
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ) !important;
+backdrop-filter: blur( 13px ) !important;
+-webkit-backdrop-filter: blur( 13px ) !important;
+border-radius: 0px !important;
+border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
+color: white !important;
+}  
