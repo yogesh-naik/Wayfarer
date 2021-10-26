@@ -8,7 +8,7 @@ and helping us with SEO {% endcomment %}
 <!-- This is an example component -->
 <div class="w-screen ">
     <div class="flex pb-10 glass-header">
-            <img src="https://images.pexels.com/photos/3278968/pexels-photo-3278968.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            <img src="{{profile.avatar.url}}"
                 class="h-40 w-40 rounded-full object-cover"
                 alt="username"/>
             <div class="ml-10">
@@ -34,19 +34,38 @@ and helping us with SEO {% endcomment %}
     <div class="border-b border-gray-300"></div>
  
     <div class="clearfix">
-      <article class="mt-5 grid grid-cols-3 gap-6">
+    <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+      <article class="mt-5 grid grid-cols-3 gap-6 ">
         {% for event in profile.creator.all %}
-        <div class="cursor-pointer relative" style="width:300px; height:300px">
+        <div class="relative w-full h-64 bg-cover bg-center group rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out" style="width:300px; height:300px">
           <a href="{% url "event_detail" event.pk %}">
           <img src="{{event.image}}"
           class="foto w-full h-full object-cover"
           alt="description" />
         </a>
-      </div>
+        <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex">
+            <h3 class="text-center">
+                <a class="text-white text-2xl font-bold text-center" href="#">
+                    <span class="absolute inset-0"></span>
+                        {{event.tile}}
+                    </a>
+                </h3>
+            </div>
+        </div>
       {% endfor %}
     </article>
     </div>
-    
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 mb-12">
+    <article>
+        <section>
+            <article class="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
+            style="background-image: url('https://images.unsplash.com/photo-1511376777868-611b54f68947?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');">
+
+            </article>
+        </section>
+    </article>
+</section>
     
 {% endblock %}
 
