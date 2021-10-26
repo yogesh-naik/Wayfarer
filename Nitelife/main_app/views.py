@@ -106,9 +106,9 @@ class ProfileView(View):
 @method_decorator(login_required(login_url='login'), name='dispatch')
 class ProfileUpdate(UpdateView):
     model = Profile
-    fields = ['first_name', 'last_name', 'email', 'city', 'birthday', 'avatar', 'efk']
+    fields = ['first_name', 'last_name', 'email', 'city', 'avatar']
     template_name = "profile_update.html"
-
+    success_url = '/profile/'
 
 @method_decorator(login_required(login_url='login'), name='dispatch')
 class CreateEvent(CreateView):
