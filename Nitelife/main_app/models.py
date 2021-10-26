@@ -7,13 +7,17 @@ import os
 def get_image_path(instance, filename):
     return os.path.join('users', str(instance.id), filename)
 
+
+
+
+
 class Profile(models.Model):
     
     user = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
     first_name = models.CharField(max_length=30, blank=False)
     last_name = models.CharField(max_length=30, blank=False)
     email = models.EmailField(max_length=50, blank=False)
-    avatar = models.ImageField(upload_to=get_image_path, blank=True, null=True)
+    avatar = models.ImageField(upload_to=get_image_path, default='https://github.com/yogesh-naik/Wayfarer/blob/avatar/Nitelife/main_app/static/images/user.png')
     birthday = models.DateField(null=True, blank=True)
     number = models.CharField(max_length=32, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
@@ -24,6 +28,8 @@ class Profile(models.Model):
     class Meta:
         verbose_name = _('Profile')
         verbose_name_plural = _('Profiles')
+
+
 
 class Event(models.Model):
 
