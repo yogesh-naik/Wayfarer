@@ -2,10 +2,6 @@
 and helping us with SEO {% endcomment %}
 
 
-
-
-<!-- component -->
-
 <div class="w-screen ">
     <div class="flex p-4 glass-header">
             <img src="{{profile.avatar.url}}"
@@ -34,27 +30,20 @@ and helping us with SEO {% endcomment %}
 
     <div class="border-b-2 divide-transparent border-opacity-20"></div>
  
-
     <div class="clearfix responsive">
       <article class="mt-5 grid grid-cols-3 gap-1 responsive">
-
-    <div class="clearfix">
-    <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
-      <article class="mt-5 grid grid-cols-3 gap-6 ">
-
         {% for event in profile.creator.all %}
-        <div class="relative w-full h-64 bg-cover bg-center group rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out" style="width:300px; height:300px">
+        <div class="cursor-pointer relative" style="width:300px; height:300px">
           <a href="{% url "event_detail" event.pk %}">
-
             <img src="{{event.image}}"
             class="foto w-full h-full"
             alt="{{event.title}}" 
             />
             <div>
-            <p class="font-bold text-3xl mx-6 -my-10 relative w-max two">
-              <span>{{event.title}}</span>
-              <span class="absolute bottom-1 left-1/2 w-0 transition-all h-1 bg-yellow-400"></span>
-              <span class="absolute bottom-1 right-1/2 w-0 transition-all h-1 bg-yellow-400"></span>
+            <p class="font-bold text-base mx-6 -my-10 relative w-max two">
+              <span style="color:red;">{{event.title}}</span>
+              <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-1 bg-blue-400"></span>
+              <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-1 bg-blue-400"></span>
             </p>
             </div>
           </a>
@@ -62,32 +51,5 @@ and helping us with SEO {% endcomment %}
         {% endfor %}
       </article>
     </div>
-        </a>
-        <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex">
-            <h3 class="text-center">
-                <a class="text-white text-2xl font-bold text-center" href="#">
-                    <span class="absolute inset-0"></span>
-                        {{event.tile}}
-                    </a>
-                </h3>
-            </div>
-        </div>
-      {% endfor %}
-    </article>
-    </div>
-
-<!-- <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 mb-12">
-    <article>
-        <section>
-            <article class="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
-            style="background-image: url('https://images.unsplash.com/photo-1511376777868-611b54f68947?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');">
-
-            </article>
-        </section>
-    </article>
-</section> -->
-
     
 {% endblock %}
-
-
