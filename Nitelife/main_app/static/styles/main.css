@@ -209,3 +209,10 @@ color: white !important;
 .three:hover span {
   height: 100%;
 }
+
+div.cursor-pointer.relative {
+  width: 30vw;
+  height: 2vh;
+  margin-left: 5%;
+  position: relative;
+}
