@@ -134,7 +134,7 @@ div.max-w-8xl.mx-auto.px-4.sm:px-6.lg:px-8 {
 /* #nav-right-orientation {
   float: right;
 } */
-.flex-center {
+body {
   background-image: url('nitelife-bg.jpg');
   /* width: 100%;
   height: auto; */
@@ -165,16 +165,16 @@ div.max-w-8xl.mx-auto.px-4.sm:px-6.lg:px-8 {
   font: Satoshi;
   font-weight:700;
   font-size: 144px;
-  padding-top:2em;
+  line-height: 1.1;
 }
 
-#welcome-para {
+/* #welcome-para {
   padding-top:1em;
   font: Nimbus Sans;
   font-weight:400;
-  font-size: 24px;
-  line-height: 28.8px;
-}
+
+
+} */
 
 body > div > div > div.flex.justify-center.pb-10 {
   display: flex;

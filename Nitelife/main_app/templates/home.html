@@ -4,49 +4,65 @@
 
 {% block content %}
 
-   <head>
-    <title>Tailwind CSS Carousel</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
-     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  
+<section class="flex min-h-screen justify-center items-center">
+   <div class="container mx-auto px-6">
 
-</head>
-
-{% comment %} <div class="">
-<h1 class="text-center font-semibold text-3xl lg:text-4xl text-white" id="welcome-txt" >Welcome to NiteLife.</h1>
-<br>
-<p id="welcome-para" class="text-center">A handcrafted, small-batch, artisinal pour-over version of<br> the classic lorem ipsum generator, Hipster Ipsum will give<br> your mocks that blue collar touch.</p>
-</p>
-</div> {% endcomment %}
-
- <body>
-<div class="swiper mySwiper">
-   <div class="swiper-wrapper">
-      <div class="swiper-slide">
-         <div class="">
-            <h1 class="text-center font-semibold text-3xl lg:text-4xl text-white" id="welcome-txt" >Welcome to NiteLife.</h1>
-            <br>
-            <p id="welcome-para" class="text-center">A handcrafted, small-batch, artisinal pour-over version of<br> the classic lorem ipsum generator, Hipster Ipsum will give<br> your mocks that blue collar touch.</p>
-            </p>
+      <div class="swiper mySwiper">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide">
+               <div class="">
+                  <h1 class="text-center font-semibold text-3xl lg:text-4xl text-white" id="welcome-txt" >Welcome to NiteLife.</h1>
+                  <br>
+                  <p id="welcome-para" class="text-center">A handcrafted, small-batch, artisinal pour-over version of<br> the classic lorem ipsum generator, Hipster Ipsum will give<br> your mocks that blue collar touch.</p>
+                  </p>
+               </div>
+            </div>
+            <div class="swiper-slide" id="test">
+               <div class="">
+                  <h1 class="text-center font-semibold text-3xl lg:text-4xl text-white" id="welcome-txt" >Join Parties in Cities!</h1>
+                  <br>
+                  <p id="welcome-para" class="text-center">San Francisco,Atlanta,Boston,New York</p>
+                  </p>
+               </div>
+            </div>
+            <div class="swiper-slide">
+               <h1 class="text-center font-semibold text-3xl lg:text-4xl text-white" id="welcome-txt" >Make your Life Happy</h1>
+               <br>
+               <p id="welcome-para" class="text-center">Put Covid memories behind you!!<br>Come, Dance, Drink, Enjoy and share happiness!</p>
+               </p>
+            </div>
          </div>
-      </div>
-      <div class="swiper-slide" id="test">
-         <div class="">
-            <h1 class="text-center font-semibold text-3xl lg:text-4xl text-white" id="welcome-txt" >Join Parties in Cities!</h1>
-            <br>
-            <p id="welcome-para" class="text-center">San Francisco,Atlanta,Boston,New York</p>
-            </p>
-         </div>
-      </div>
-      <div class="swiper-slide">
-         <h1 class="text-center font-semibold text-3xl lg:text-4xl text-white" id="welcome-txt" >Make your Life Happy</h1>
-         <br>
-         <p id="welcome-para" class="text-center">Put Covid memories behind you!!<br>Come, Dance, Drink, Enjoy and share happiness!</p>
-         </p>
+         <div class="swiper-button-next"></div>
+         <div class="swiper-button-prev"></div>
       </div>
    </div>
-   <div class="swiper-button-next"></div>
-   <div class="swiper-button-prev"></div>
-</div>
+</section>
+
+<section class="mb-20">
+   <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-semibold mb-10">We The Party</h2>
+
+      <div class="flex justify-between space-x-10">
+         <div class="">
+            <h6 class="text-xl font-semibold mb-2">Were Everywhere</h6>
+            <p>I'm baby subway tile 90's paleo stumptown. Pork belly distillery try-hard, bespoke lo-fi fanny pack leggings everyday carry live-edge retro. Hella four dollar toast squid tousled whatever.</p>
+
+         </div>
+         <div>
+            <h6 class="text-xl font-semibold mb-2">Here For A Good Time</h6>
+            <p>I'm baby subway tile 90's paleo stumptown. Pork belly distillery try-hard, bespoke lo-fi fanny pack leggings everyday carry live-edge retro. Hella four dollar toast squid tousled whatever.</p>
+
+         </div>
+         <div>
+            <h6 class="text-xl font-semibold mb-2">We Got What You Need</h6>
+            <p>I'm baby subway tile 90's paleo stumptown. Pork belly distillery try-hard, bespoke lo-fi fanny pack leggings everyday carry live-edge retro. Hella four dollar toast squid tousled whatever.</p>
+
+         </div>
+      </div>
+   </div>
+   
+</section>
 
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -58,6 +74,6 @@
         },
       });
     </script>
-  </body>
+
 
 {% endblock %}
