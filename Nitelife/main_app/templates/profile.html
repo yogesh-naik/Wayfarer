@@ -33,18 +33,18 @@ and helping us with SEO {% endcomment %}
     <div class="clearfix responsive">
       <article class="mt-5 grid grid-cols-3 gap-1 responsive">
         {% for event in profile.creator.all %}
-        <div class="cursor-pointer relative" style="width:300px; height:300px">
-          <a href="{% url "event_detail" event.pk %}">
+        <div class="cursor-pointer relative" style="width:30vw; height:30vh">
+          <a class="items-center" href="{% url "event_detail" event.pk %}">
             <img src="{{event.image}}"
             class="foto w-full h-full"
             alt="{{event.title}}" 
             />
             <div>
-            <p class="font-bold text-base mx-6 -my-10 relative w-max two">
-              <span style="color:red;">{{event.title}}</span>
-              <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-1 bg-blue-400"></span>
-              <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-1 bg-blue-400"></span>
-            </p>
+                <div class="font-bold text-base bg-gray-500 text-center w-full relative two">
+                    <span style="color:red;">{{event.title}}</span>
+                    <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-1 bg-blue-400"></span>
+                    <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-1 bg-blue-400"></span>
+                </div>
             </div>
           </a>
         </div>
