@@ -19,8 +19,10 @@
         <p>{{event.location}}</p>
         <p>{{event.bio}}</p>
         <br>
-        <button class="btn" href="{% url 'event_update'}">edit</button>
-        <button class="btn" href="{% url 'event_delete'}">delete</button>
+        {% if event.creator.user == user %}
+        <a class="btn" href="{% url 'event_update' event.pk  %}">edit</a>
+        <a class="btn" href="{% url 'event_delete' event.pk %}">delete</a>
+        {% endif %}
       </div>
     </div>
   </a>

@@ -195,6 +195,18 @@ box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ) !important;
 backdrop-filter: blur( 13px ) !important;
 -webkit-backdrop-filter: blur( 13px ) !important;
 border-radius: 0px !important;
-border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
+border: 0px solid rgba( 255, 255, 255, 0.18 ) !important;
 color: white !important;
 }  
+
+.one:hover span:last-child {
+  width: 100%;
+}
+
+.two:hover span {
+  width: 50%;
+}
+
+.three:hover span {
+  height: 100%;
+}

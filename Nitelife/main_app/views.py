@@ -143,5 +143,8 @@ class EventUpdate(UpdateView):
     model = Event
     fields = ['title', 'location','bio', 'image']
     template_name = "event_update.html"
-    success_url = "/events/"
-
+    
+    def get_success_url(self):
+        print(self.kwargs)
+        # return reverse('event_detail', kwargs={'pk': self.object.pk})
+        return reverse("event_detail", kwargs={'pk': self.object.pk})
