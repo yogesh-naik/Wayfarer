@@ -99,6 +99,14 @@ div.lg\:inline-flex:nth-child(1) {
   position:relative;
   transition: background-color 100ms linear;
 } */
+.Navbar {
+  z-index: 999 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+
+}
 
 #neon-nav {
   font-size: 1em;
@@ -139,6 +147,7 @@ body {
   /* width: 100%;
   height: auto; */
   background-size: cover;
+  padding-top: 80px;
 }
 
 /* #event-form > p{
