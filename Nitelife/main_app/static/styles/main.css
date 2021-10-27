@@ -185,7 +185,7 @@ body {
 
 } */
 
-body > div > div > div.flex.justify-center.pb-10 {
+/* body > div > div > div.flex.justify-center.pb-10 {
   display: flex;
   justify-content: flex-start;
   margin-left: 5%;
@@ -195,7 +195,7 @@ body > div > div > div.flex.justify-center.pb-10 {
 body > div > div > div > article > div > a > img{
   margin-left: 5%;
   margin-right: 5%;
-}
+} */
 
 
 .glass-header {
@@ -207,21 +207,21 @@ border: 0px solid rgba( 255, 255, 255, 0.18 ) !important;
 color: white !important;
 }  
 
-.one:hover span:last-child {
-  width: 100%;
-}
+/* .post__card:hover span:last-child {
+  width: 50%;
+} */
 
-.two:hover span {
+.post__card:hover span {
   width: 50%;
 }
 
-.three:hover span {
+/* .three:hover span {
   height: 100%;
-}
+} */
 
-div.cursor-pointer.relative {
+/* div.cursor-pointer.relative {
   width: 30vw;
   height: 2vh;
   margin-left: 5%;
   position: relative;
-}
+} */

@@ -1,24 +1,25 @@
 {% extends 'base.html' %} {% block content %} {% comment %} for head title tags
 and helping us with SEO {% endcomment %}
 
+<section>
+    <div class="container mx-auto px-6">
 
-<div class="w-screen ">
-    <div class="flex p-4 glass-header">
-            <img src="{{profile.avatar.url}}"
-                class="h-40 w-40 box-full object-cover"
-                alt="username"
-                />
+        <div class="flex p-4 glass-header">
+            <img src="{{profile.avatar.url}}" class="h-40 w-40 box-full object-cover" alt="username" />
             <div class="ml-10">
                 <div class="flex items-center">
                     <h2 class="block leading-relaxed font-light text-blue-700 text-3xl">{{profile.user}}</h2>
-                    <a class="cursor-pointer m-0 p-0 border-transparent text-gray-700 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600" href="{% url 'profile_update' profile.pk %}">
-                        <svg class="h-5 w-10" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    <a class="cursor-pointer m-0 p-0 border-transparent text-gray-700 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600"
+                        href="{% url 'profile_update' profile.pk %}">
+                        <svg class="h-5 w-10" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                             <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </a>
                 </div>
-                    <!-- <li>
+                <!-- <li>
                         <span class="block text-base flex"><span class="font-bold mr-2">23 </span> Posts</span>
                     </li> -->
                 <br>
@@ -26,30 +27,31 @@ and helping us with SEO {% endcomment %}
                     <span class="text-base">{{profile.bio}}</span>
                 </div>
             </div>
-    </div>
-
-    <div class="border-b-2 divide-transparent border-opacity-20"></div>
- 
-    <div class="clearfix responsive">
-      <article class="mt-5 grid grid-cols-3 gap-1 responsive">
-        {% for event in profile.creator.all %}
-        <div class="cursor-pointer relative" style="width:30vw; height:30vh">
-          <a class="items-center" href="{% url "event_detail" event.pk %}">
-            <img src="{{event.image}}"
-            class="foto w-full h-full"
-            alt="{{event.title}}" 
-            />
-            <div>
-                <div class="font-bold text-base bg-gray-500 text-center w-full relative two">
-                    <span style="color:red;">{{event.title}}</span>
-                    <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-1 bg-blue-400"></span>
-                    <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-1 bg-blue-400"></span>
-                </div>
-            </div>
-          </a>
         </div>
-        {% endfor %}
-      </article>
     </div>
-    
+</section>
+
+<div class="border-b-2 mb-20 divide-transparent border-opacity-20"></div>
+<section>
+    <div class="container mx-auto px-6">
+        <div class="clearfix responsive">
+            <article class="mt-5 grid grid-cols-3 gap-4 responsive">
+                {% for event in profile.creator.all %}
+                <div class="rounded-sm overflow-hidden pb-2">
+                    <a class="post__card relative flex flex-col" href="{% url 'event_detail' event.pk %}">
+                        <img src="{{event.image}}" class="foto w-full h-full" alt="{{event.title}}" />
+                        <div>
+                            <div class="text-base p-2 bg-white text-center w-full relative two">
+                                <span style="color:black;">{{event.title}}</span>
+                                <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-1 bg-blue-400"></span>
+                                <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-1 bg-blue-400"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </article>
+        </div>
+</section>
+
 {% endblock %}
