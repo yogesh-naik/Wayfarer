@@ -8,3 +8,8 @@ $(document).ready(function() {
       });
     });
   });
+
+$('.hidden').on('hover', function() {
+  $(this).toggleClass('hidden').siblings().removeClass('hidden');
+})
+
