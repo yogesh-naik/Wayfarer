@@ -49,14 +49,16 @@
       {% for event in events %}
 
         <a class="flex flex-row m-4" href="{% url "event_detail" event.pk %}">
-          <figure class="w-40">
-            <img class="rounded-xl" src="{{event.image}}" alt="{{event.title}}" />
+
+          <figure class="w-1/4 h-20">
+            <img class="w-full h-full object-center object-cover rounded-xl" src="{{event.image}}" alt="{{event.title}}" />
           </figure>
-          <div>
-            <label class="text-xl ml-4">
+          <div class="w-3/4">
+
+            <h3 class="text-xl ml-4">
               {{event.title}}
-            </label>
-            <p class="text-base ml-4">
+            </h3>
+            <p class="w-3/4 text-base ml-4">
               {{event.bio}}
             </p>
           </div>
