@@ -4,17 +4,17 @@
 
 {% block content %}
 <div class='flex flex-row'>
-  <section class="flex flex-col w-1/3 mt-8 ml-4 border-2 rounded-xl p-4 space-y-4">
-    <h1 class="m-8">Select Your City</h1>
+  <section class="flex flex-col w-1/3 mt-2 ml-10 border-2 rounded-xl p-4 space-y-4">
+    <h1 class="text-center text-4xl m-4">Select Your City</h1>
     
     <form method="get">
       <div id="city-selection" class="flex flex-col">
-        <button class="bg-black bg-opacity-50 mt-2 p-6 rounded-xl" id="neon-nav" name="location" value="" selected>
-          All
+        <button class="bg-black bg-opacity-50 mt-2 p-6 rounded-3xl" id="neon-nav" name="location" value="" selected>
+          <h1 class="text-2xl">All</h1>
         </button>
       {% for city in cities %}
-        <button class="bg-black bg-opacity-50 mt-2 p-6 rounded-xl" type="submit" id="neon-nav" name="location" value="{{ city }}">
-          {{ city }}
+        <button class="bg-black bg-opacity-50 mt-2 p-6 rounded-3xl" type="submit" id="neon-nav" name="location" value="{{ city }}">
+          <h1 class="text-2xl">{{ city }}</h1>
         </button>
 
       {% endfor %}
@@ -25,30 +25,25 @@
   
   </section>
 
-  <section class="flex flex-col border-2 rounded-xl mr-4 mt-8 w-2/3 p-4 ml-4 space-y-4">
-    <div class="flex flex-row justify-around items-center h-24 m-4 space-x-2">
+  <section class="flex flex-col border-2 rounded-xl mr-10 mt-2 w-2/3 p-4 ml-10 space-y-4">
           {% if header %}
-          <h1 class="text-2xl">{{ header }}</h1>
+          <h1 class="text-center text-4xl m-4">{{ header }}</h1>
           
           {% else %}
-          <h1 class="text-2xl">All</h1> 
+          <h1 class="text-center text-4xl m-4">All</h1> 
           {% endif %}
-
-          <div>
-            <p class="text-right">City Image</p>
-          </div>
-    </div>
+    
         
     <div class='flex flex-row justify-between'>
-      <h1 class='text-left text-2xl'>Parties</h1>
-      <a class="text-3xl" href="/events/new">+</a>
+      <h1 class='text-left text-4xl ml-4'>Parties</h1>
+      <a id="neon-button" class="py-2 px-4 text-4xl" href="/events/new">+</a>
 
     </div>
 
     <section>
       {% for event in events %}
 
-        <a class="flex flex-row m-4" href="{% url "event_detail" event.pk %}">
+        <a id="event-card-hover" class="flex flex-row m-4 rounded-xl" href="{% url "event_detail" event.pk %}">
 
           <figure class="w-1/4 h-20">
             <img class="w-full h-full object-center object-cover rounded-xl" src="{{event.image}}" alt="{{event.title}}" />

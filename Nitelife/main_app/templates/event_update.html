@@ -1,9 +1,32 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Update {{events.title}}</h1>
 
-<form action="" method="post">
-  {% csrf_token %} {{form.as_p}} 
-  <input type="submit" value="Submit" />
-</form>
+<div class="flex flex-col h-screen w-full">
+    <!-- Auth Card Container -->
+    <div class="grid place-items-center mx-2 my-20 sm:my-auto">
+        <!-- Auth Card -->
+        <div class="w-11/12 p-12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-4/12 
+            px-6 py-10 sm:px-10 sm:py-6 glass 
+            bg-white rounded-lg shadow-md lg:shadow-lg">
+
+            <!-- Card Title -->
+            <h2 class="text-center font-semibold text-3xl lg:text-4xl text-white">
+                Update Your Event!
+            </h2>
+
+            <form id='event-form' class="mt-10" action="" method="POST" enctype='multipart/form-data'>
+
+                {% csrf_token %} {{form.as_p}}
+            
+                <!-- Auth Buttton -->
+                <button type="submit"
+                    class="w-full py-3 mt-10 bg-gray-800 rounded-sm
+                    font-medium text-white uppercase
+                    focus:outline-none hover:bg-gray-700 hover:shadow-none">
+                    Save
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
