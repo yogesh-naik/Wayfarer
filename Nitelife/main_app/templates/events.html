@@ -35,7 +35,7 @@
     
         
     <div class='flex flex-row justify-between'>
-      <h1 class='text-left text-4xl'>Parties</h1>
+      <h1 class='text-left text-4xl ml-4'>Parties</h1>
       <a id="neon-button" class="py-2 px-4 text-4xl" href="/events/new">+</a>
 
     </div>
@@ -43,7 +43,7 @@
     <section>
       {% for event in events %}
 
-        <a class="flex flex-row m-4 rounded-xl hover:border-2" href="{% url "event_detail" event.pk %}">
+        <a id="event-card-hover" class="flex flex-row m-4 rounded-xl" href="{% url "event_detail" event.pk %}">
 
           <figure class="w-1/4 h-20">
             <img class="w-full h-full object-center object-cover rounded-xl" src="{{event.image}}" alt="{{event.title}}" />

@@ -5,7 +5,8 @@ and helping us with SEO {% endcomment %}
     <div class="container mx-auto px-6">
 
         <div class="flex p-4 glass-header">
-            <img src="{{profile.avatar.url}}" class="h-40 w-40 box-full object-cover" alt="username" />
+            <img src="{{profile.avatar.url}}" class="h-40 w-40 box-full
+            rounded-xl object-cover" alt="username" />
             <div class="ml-10">
                 <div class="flex items-center">
                     <h2 class="block leading-relaxed font-light text-blue-700 text-3xl">{{profile.user}}</h2>
@@ -35,16 +36,16 @@ and helping us with SEO {% endcomment %}
 <section>
     <div class="container mx-auto px-6">
         <div class="clearfix responsive">
-            <article class="mt-5 grid grid-cols-3 gap-4 responsive">
+            <article class="flex flex-row space-x-4 w-full ">
                 {% for event in profile.creator.all %}
-                <div class="rounded-sm overflow-hidden pb-2">
-                    <a class="post__card relative flex flex-col" href="{% url 'event_detail' event.pk %}">
-                        <img src="{{event.image}}" class="foto w-full h-full" alt="{{event.title}}" />
+                <div class="rounded-sm overflow-hidden pb-2 w-full">
+                    <a class="post__card relative flex flex-col w-80 h-80" href="{% url 'event_detail' event.pk %}">
+                        <img src="{{event.image}}" class="foto w-full h-full box-full object-cover" alt="{{event.title}}" />
                         <div>
                             <div class="text-base p-2 bg-white text-center w-full relative two">
                                 <span style="color:black;">{{event.title}}</span>
-                                <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-1 bg-blue-400"></span>
-                                <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-1 bg-blue-400"></span>
+                                <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-1 bg-pink-500"></span>
+                                <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-1 bg-pink-500"></span>
                             </div>
                         </div>
                     </a>
