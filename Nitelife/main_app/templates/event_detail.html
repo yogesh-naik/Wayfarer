@@ -1,29 +1,36 @@
 {% extends 'base.html' %}
 
-{% comment %} for head title tags and helping us with SEO {% endcomment %}
-{% block title %}Events{% endblock  %}
-
 {% block content %}
 
-<div>
-  <a href="">
-    <div>
-      <div>
-        <figure>
-          <img src="{{event.image}}" alt="{{event.title}}" />
-        </figure>
+<section class="flex min-h-screen justify-center">
+  <div class="container mx-auto px-6">
+
+    <div class="rounded-xl h-80 overflow-hidden w-full mb-6 relative">
+      <div class="flex justify-around items-center absolute top-4 left-6 bg-white text-black px-4 py-2 rounded-xl"><svg width="11" height="17" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.95875 7.60263L5.26007 17L0.561382 7.60263C-1.18508 4.10971 1.35487 0 5.26007 0C9.16527 0 11.7052 4.10971 9.95875 7.60263ZM5.26007 8C6.64078 8 7.76007 6.88071 7.76007 5.5C7.76007 4.11929 6.64078 3 5.26007 3C3.87936 3 2.76007 4.11929 2.76007 5.5C2.76007 6.88071 3.87936 8 5.26007 8Z" fill="black"/>
+        </svg>
+        <span class="ml-2">
+          {{event.location}}
+        </span></div>
+
+      {% if event.creator.user == user %}
+      <div class= "flex justify-around items-center absolute top-4 right-6">
+        <a class="bg-white text-black px-4 py-2 mr-4 rounded-xl" href="{% url 'event_update' event.pk  %}">edit</a>
+        <a class="bg-white text-black px-4 py-2 rounded-xl" href="{% url 'event_delete' event.pk %}">delete</a>
+
       </div>
+      {% endif %}
+      
+      <img class="w-full h-full object-cover object-center" src="{{event.image}}" alt="{{event.title}}" />
+    </div>
+
       <div>
-        <p>{{event.title}}</p>
-        <p>{{event.creator.user}}</p>
-        <p>{{event.location}}</p>
+        <h1 class="font-semibold text-3xl mb-2">{{event.title}}</h1>
         <p>{{event.bio}}</p>
         <br>
-        {% if event.creator.user == user %}
-        <a class="btn" href="{% url 'event_update' event.pk  %}">edit</a>
-        <a class="btn" href="{% url 'event_delete' event.pk %}">delete</a>
-        {% endif %}
       </div>
-    </div>
-  </a>
+      
+   
+  </div>
+</section>
 {% endblock %}

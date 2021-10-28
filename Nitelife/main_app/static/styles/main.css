@@ -99,6 +99,14 @@ div.lg\:inline-flex:nth-child(1) {
   position:relative;
   transition: background-color 100ms linear;
 } */
+.Navbar {
+  z-index: 999 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+
+}
 
 #neon-nav {
   font-size: 1em;
@@ -134,11 +142,12 @@ div.max-w-8xl.mx-auto.px-4.sm:px-6.lg:px-8 {
 /* #nav-right-orientation {
   float: right;
 } */
-.flex-center {
+body {
   background-image: url('nitelife-bg.jpg');
   /* width: 100%;
   height: auto; */
   background-size: cover;
+  padding-top: 80px;
 }
 
 /* #event-form > p{
@@ -165,18 +174,18 @@ div.max-w-8xl.mx-auto.px-4.sm:px-6.lg:px-8 {
   font: Satoshi;
   font-weight:700;
   font-size: 144px;
-  padding-top:2em;
+  line-height: 1.1;
 }
 
-#welcome-para {
+/* #welcome-para {
   padding-top:1em;
   font: Nimbus Sans;
   font-weight:400;
-  font-size: 24px;
-  line-height: 28.8px;
-}
 
-body > div > div > div.flex.justify-center.pb-10 {
+
+} */
+
+/* body > div > div > div.flex.justify-center.pb-10 {
   display: flex;
   justify-content: flex-start;
   margin-left: 5%;
@@ -186,11 +195,10 @@ body > div > div > div.flex.justify-center.pb-10 {
 body > div > div > div > article > div > a > img{
   margin-left: 5%;
   margin-right: 5%;
-}
+} */
 
 
 .glass-header {
-background: rgba( 92, 14, 14, 0.2 ) !important;
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ) !important;
 backdrop-filter: blur( 13px ) !important;
 -webkit-backdrop-filter: blur( 13px ) !important;
@@ -199,15 +207,21 @@ border: 0px solid rgba( 255, 255, 255, 0.18 ) !important;
 color: white !important;
 }  
 
-.one:hover span:last-child {
-  width: 100%;
-}
+/* .post__card:hover span:last-child {
+  width: 50%;
+} */
 
-.two:hover span {
+.post__card:hover span {
   width: 50%;
 }
 
-.three:hover span {
+/* .three:hover span {
   height: 100%;
-}
+} */
 
+/* div.cursor-pointer.relative {
+  width: 30vw;
+  height: 2vh;
+  margin-left: 5%;
+  position: relative;
+} */
