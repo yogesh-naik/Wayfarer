@@ -1,14 +1,20 @@
 {% extends 'base.html' %} {% block content %}
-<h1 class="title pt-5">Are you sure you want to Delete {{artist.name}}?</h1>
-<form method="post">
+
+<div class="grid place-items-center mx-2 my-20 sm:my-auto">
+<div class="text-center w-11/12 p-12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-4/12
+            px-6 py-10 sm:px-10 sm:py-6 glass
+            rounded-lg shadow-md lg:shadow-lg">
+<h1 class="title pt-5 text-4xl italic">Are you sure you want to delete {{event.title}}?</h1>
+<form method="post" class="text-center mt-5">
   {% csrf_token %}
-  <div class="buttons">
+  {% comment %} <div class="buttons m-5"> {% endcomment %}
    <!-- confirm artist delete -->
-    <input class="button is-danger" type="submit" value="Confirm" />
+    <input id="neon-nav" class="button is-danger text-2xl pl-5 pr-5 text-center bg-gray-400" type="submit" value="Confirm" />
     <!-- Redirect back to detail on cancel -->
-    <a class="button is-primary" href="{% url 'event_detail' event.pk %}"
+    <a class="button is-primary text-1xl" href="{% url 'event_detail' event.pk %}"
       >Cancel</a
     >
   </div>
 </form>
+ </div>
 {% endblock %}
