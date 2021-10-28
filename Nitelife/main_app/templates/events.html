@@ -9,11 +9,11 @@
     
     <form method="get">
       <div id="city-selection" class="flex flex-col">
-        <button class="bg-black hover:bg-red-500 bg-opacity-50 mt-2 p-6 rounded-xl" name="location" value="" selected>
+        <button class="bg-black bg-opacity-50 mt-2 p-6 rounded-xl" id="neon-nav" name="location" value="" selected>
           All
         </button>
       {% for city in cities %}
-        <button class="bg-black hover:bg-red-500 bg-opacity-50 mt-2 p-6 rounded-xl" type="submit" name="location" value="{{ city }}">
+        <button class="bg-black bg-opacity-50 mt-2 p-6 rounded-xl" type="submit" id="neon-nav" name="location" value="{{ city }}">
           {{ city }}
         </button>
 
