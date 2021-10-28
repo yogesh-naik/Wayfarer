@@ -33,7 +33,17 @@ h3 {
   color: #ffffff;
 }
 
+h2 {
+  font-size: 48px !important;
+}
 
+h3 {
+  font-size: 24px !important;
+}
+
+#create-post__card:hover h3{
+  color: rgb(255, 196, 245);
+}
 
 .glass {
 background: rgba( 92, 14, 14, 0.2 ) !important;
@@ -119,7 +129,12 @@ div.lg\:inline-flex:nth-child(1) {
   transition: background-color 100ms linear;
 }
 
-#neon-nav:hover{
+#neon-button {
+ 
+  transition: background-color 100ms linear;
+}
+
+#neon-nav:hover, #neon-button:hover{
   background-color:#ff009F;
   color: #ffffff;
   box-shadow: 0px 0px 5px 5px #ff009F;
@@ -130,6 +145,11 @@ div.lg\:inline-flex:nth-child(1) {
   color: #ff009F;
 } */
 
+
+
+#event-card-hover:hover {
+  box-shadow: 0px 0px 5px 5px #ff009F;
+}
 
 div.px-10 > p {
   color: red;
