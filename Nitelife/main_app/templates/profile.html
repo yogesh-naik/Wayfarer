@@ -4,11 +4,11 @@ and helping us with SEO {% endcomment %}
 <section>
     <div class="container mx-auto px-6">
 
-        <div class="flex p-4 glass-header">
+        <div class="flex p-4">
             <img src="{{profile.avatar.url}}" class="h-40 w-40 box-full object-cover" alt="username" />
             <div class="ml-10">
                 <div class="flex items-center">
-                    <h2 class="block leading-relaxed font-light text-blue-700 text-3xl">{{profile.user}}</h2>
+                    <h2 class="block leading-relaxed font-light text-blue-400 text-3xl">{{profile.user}}</h2>
                     <a class="cursor-pointer m-0 p-0 border-transparent text-gray-700 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600"
                         href="{% url 'profile_update' profile.pk %}">
                         <svg class="h-5 w-10" fill="none" stroke-linecap="round" stroke-linejoin="round"
@@ -24,7 +24,8 @@ and helping us with SEO {% endcomment %}
                     </li> -->
                 <br>
                 <div class="">
-                    <span class="text-base">{{profile.bio}}</span>
+                    <p class="text-base">{{profile.first_name}} {{profile.last_name}}</p>
+                    <p class="text-base">{{profile.bio}}</p>
                 </div>
             </div>
         </div>
@@ -35,21 +36,24 @@ and helping us with SEO {% endcomment %}
 <section>
     <div class="container mx-auto px-6">
         <div class="clearfix responsive">
-            <article class="mt-5 grid grid-cols-3 gap-4 responsive">
-                {% for event in profile.creator.all %}
-                <div class="rounded-sm overflow-hidden pb-2">
-                    <a class="post__card relative flex flex-col" href="{% url 'event_detail' event.pk %}">
-                        <img src="{{event.image}}" class="foto w-full h-full" alt="{{event.title}}" />
-                        <div>
-                            <div class="text-base p-2 bg-white text-center w-full relative two">
-                                <span style="color:black;">{{event.title}}</span>
-                                <span class="absolute -bottom-1 left-1/2 w-0 transition-all h-1 bg-blue-400"></span>
-                                <span class="absolute -bottom-1 right-1/2 w-0 transition-all h-1 bg-blue-400"></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
+            <article class="mt-5 grid grid-cols-3 gap-8 responsive">
+                    {% for event in profile.creator.all %}
+                    <div class="rounded-md overflow-hidden h-80">
+                        <a class="post__card relative flex flex-col h-full" href="{% url 'event_detail' event.pk %}">
+                            <img src="{{event.image}}" class="foto object-cover object-center w-full h-4/5" alt="{{event.title}}" />
+                                <div class="text-base p-2 bg-white text-center w-full relative h-1/5 two flex justify-center items-center">
+                                    <span style="color:black;">{{event.title}}</span>
+                                    <span class="absolute bottom-0 left-1/2 w-0 transition-all h-1 bg-blue-400"></span>
+                                    <span class="absolute bottom-0 right-1/2 w-0 transition-all h-1 bg-blue-400"></span>
+                                </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                    <div id="create-post__card" class="rounded-md overflow-hidden h-80 bg-white hover:bg-blue-400 transition-colors">
+                        <a class="post__card relative flex flex-col w-full h-full flex justify-center items-center" href="{% url 'create_event' %}">
+                            <h3 class="text-black">Create a Post +</h3>
+                        </a>
+                    </div>
             </article>
         </div>
 </section>

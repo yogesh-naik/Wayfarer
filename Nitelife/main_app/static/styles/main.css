@@ -33,7 +33,17 @@ h3 {
   color: #ffffff;
 }
 
+h2 {
+  font-size: 48px !important;
+}
 
+h3 {
+  font-size: 24px !important;
+}
+
+#create-post__card:hover h3{
+  color: rgb(0, 26, 255);
+}
 
 .glass {
 background: rgba( 92, 14, 14, 0.2 ) !important;
@@ -129,7 +139,6 @@ div.lg\:inline-flex:nth-child(1) {
 /* .top-navbar {
   color: #ff009F;
 } */
-
 
 div.px-10 > p {
   color: red;

@@ -62,7 +62,7 @@ class SignUp(View):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('/')
+            return redirect('/profile')
         else:
             context = {'form': form}
             return render(request, 'registration/signup.html', context)
