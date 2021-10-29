@@ -37,11 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    "nitelife.wsgi"
     'main_app' ,
     'tailwind',
     'theme',
-    "theme.apps.ThemeConfig",
+    # "theme.apps.ThemeConfig",
     'django.contrib.staticfiles',
 ]
 
