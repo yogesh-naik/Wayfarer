@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b2b726c892f165483820fd1da5fbf6a4023922b9b1c4221a4e3cf07e47ed16ff"
+            "sha256": "75d54fc2b958c784d3715726f11c6db498839b98948cc18b23abf36861b7cc0e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -116,14 +116,6 @@
             ],
             "index": "pypi",
             "version": "==2.2.2"
-        },
-        "django-tailwind-postcss": {
-            "hashes": [
-                "sha256:0fd400d17f98a4de913432e38aaa145686f2f80fdfcec0a6128c29b8460d95b8",
-                "sha256:b9449a65d69590aded2d5a6979bb5f86940d3d320f0c2dd5835f1f0118ccc35c"
-            ],
-            "index": "pypi",
-            "version": "==0.12.0"
         },
         "filters": {
             "hashes": [
@@ -409,7 +401,7 @@
                 "sha256:4987c65554f7a2dbf30c18fd48778ef124af6fab771a377103da0585e2336ece",
                 "sha256:c4fdf4019605b6e5423637e01bc9fe4daef873709a7973e195ceba0a62bbc844"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4.0'",
             "version": "==1.26.7"
         },
         "whitenoise": {
