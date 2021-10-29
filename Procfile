@@ -1,1 +1,1 @@
-web: gunicorn nitelife.wsgi
+web: gunicorn nitelife/wsgi.py
