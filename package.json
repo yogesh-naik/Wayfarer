@@ -1,7 +1,7 @@
 {
 
   "engines": {
-    "node": ">=0.10.3 <15"
+    "node": "14.x.x"
   },
   "name": "nitelife",
   "version": "1.0.0",
