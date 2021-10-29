@@ -1,6 +1,5 @@
 import os
 
-import dj_database_url
 """
 Django settings for Nitelife project.
 
@@ -34,15 +33,15 @@ ALLOWED_HOSTS = ['secure-ocean-40927.herokuapp.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    "theme",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'main_app',
+    "theme",
     'tailwind',
+    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
@@ -85,6 +84,7 @@ DATABASES = {
         'NAME': 'nitelife',
     }
 }
+
 
 
 # Password validation
@@ -155,4 +155,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
