@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'main_app' ,
     'tailwind',
     'theme',
+    "theme.apps.ThemeConfig",
     "Nitelife.wsgi"
 ]
 
