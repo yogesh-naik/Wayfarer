@@ -1,7 +1,6 @@
 {
   "engines": {
-    "node": "14",
-    "npm": "default"
+    "node": "14"
   },
   "name": "Nitelife",
   "version": "1.0.0",
