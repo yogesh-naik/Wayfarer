@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-mpb478dok7(*cjpztfjjmd^0cfy(u)%ejh8xyje(_$n#rn84v5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['secure-ocean-40927.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['cryptic-springs-79510.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -86,6 +86,7 @@ DATABASES = {
     }
 }
 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -155,4 +156,3 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
