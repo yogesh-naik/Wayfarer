@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "theme.apps.ThemeConfig",
     'theme',
     'tailwind',
-    "Nitelife.wsgi"
+    "nitelife.wsgi"
 ]
 
 MIDDLEWARE = [
