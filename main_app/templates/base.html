@@ -8,17 +8,17 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
       <!-- in our html head tag add the following  -->
-      <link  rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}" />
-      <link  rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
-      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" >
+      <link  rel="stylesheet"  href="{% static 'styles/main.css' %}" type="text/css"/>
+      <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" type="text/css"/>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" >
       <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" > 
-      <link type="text/css" rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
       {% tailwind_css %}
-      <script type="text/javascript" {% static 'scripts/main.js' %}" defer></script>
+      <script {% static 'scripts/main.js' %}" defer></script>
       <title>EventNav - {% block title %}{% endblock %}</title>
    </head>
    <body>
-      {% comment %} <div class="bg-fixed ..." type='text/css' style="background-image: url(..)"></div> {% endcomment %}
+      {% comment %} <div class="bg-fixed ..." style="background-image: url(..)"></div> {% endcomment %}
       
       <nav class="Navbar">
          <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
