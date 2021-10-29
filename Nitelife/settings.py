@@ -37,12 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'main_app' ,
-    "theme.apps.ThemeConfig",
-    'theme',
-    'tailwind',
     "nitelife.wsgi"
+    'main_app' ,
+    'tailwind',
+    'theme',
+    "theme.apps.ThemeConfig",
+    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
