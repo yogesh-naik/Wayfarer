@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'nitelife'
     'tailwind',
     'theme',
+    'nitelife/wsgi.py'
 ]
 
 MIDDLEWARE = [
