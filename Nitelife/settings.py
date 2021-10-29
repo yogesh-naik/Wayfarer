@@ -1,4 +1,5 @@
 import os
+import dj_database_url
 """
 Django settings for Nitelife project.
 
@@ -32,7 +33,7 @@ ALLOWED_HOSTS = ['https://powerful-scrubland-36077.herokuapp.com/', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    "theme.apps.ThemeConfig",
+    "theme",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_app',
-    'tailwind'
 ]
 
 MIDDLEWARE = [
@@ -151,3 +151,6 @@ MEDIA_URL = '/media/'
 
 # Path where media is stored</span>
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
