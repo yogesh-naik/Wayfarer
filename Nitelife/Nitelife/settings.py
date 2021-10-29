@@ -39,10 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_app' ,
-    'nitelife'
     'tailwind',
     'theme',
-    'nitelife/wsgi.py'
 ]
 
 MIDDLEWARE = [
