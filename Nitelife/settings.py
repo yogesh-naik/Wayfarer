@@ -32,16 +32,14 @@ ALLOWED_HOSTS = ['https://powerful-scrubland-36077.herokuapp.com/', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'main_app' ,
-    'theme',
-    'tailwind'
-    "theme.apps.ThemeConfig",
     'django.contrib.staticfiles',
+    'main_app',
 ]
 
 MIDDLEWARE = [
