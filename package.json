@@ -1,4 +1,8 @@
 {
+
+  "engines": {
+    "node": ">=0.10.3 <15"
+  },
   "name": "nitelife",
   "version": "1.0.0",
   "description": "Dummy package.json to point the Heroku buildpack at the correct one.",
