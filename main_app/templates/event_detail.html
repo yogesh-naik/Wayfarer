@@ -28,12 +28,12 @@
         <h1 class="font-semibold text-3xl mb-2">{{event.title}}</h1>
           <p>{{event.bio}}</p>
           <br>
-          <!-- {% if event.music %}
+          {% if event.music.url != '' %}
           <audio controls>
             <source src="{{event.music.url}}" type="audio/wav">
           </audio>
           {% else %}
-          <p>No music available</p> -->
+          <p></p>
           <br>
       </div>
       {% endif %}

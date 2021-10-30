@@ -113,27 +113,26 @@ class ProfileUpdate(UpdateView):
 @method_decorator(login_required(login_url='login'), name='dispatch')
 class CreateEvent(CreateView):
     model = Event
-    fields = ['title', 'location','bio', 'image', 'video']
+    fields = ['title', 'location','bio', 'image', 'music']
     template_name = "create_event.html"
 
-    def upload_video(request):
-    
+    def upload_music(request):
         if request.method == 'POST': 
+    
+            music = request.POST['music']
         
-            video = request.POST['video']
-        
-            content = Event(video=video)
+            content = Event(music=music)
             content.save()
             return redirect('events')
     
         return render(request,'upload.html')
 
     def display(request):
-        video = Event.objects.all()
+        music = Event.objects.all()
         context ={
-            'video':video,
+            'music':music,
         }
-        return render(request,'events.html',context)
+        return render(request,'events_detail.html',context)
 
     def form_valid(self, form):
         profile = Profile.objects.get(user=self.request.user)
@@ -160,7 +159,7 @@ class EventDelete(DeleteView):
 @method_decorator(login_required(login_url='login'), name='dispatch')
 class EventUpdate(UpdateView):
     model = Event
-    fields = ['title', 'location','bio', 'image', 'video']
+    fields = ['title', 'location','bio', 'image', 'music']
     template_name = "event_update.html"
     
     def get_success_url(self):

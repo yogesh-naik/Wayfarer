@@ -8,6 +8,9 @@ def get_image_path(instance, filename):
     return os.path.join('users', str(instance.id), filename)
 
 
+def get_audio_path(instance, filename):
+    return os.path.join('music', str(instance.id), filename)
+
 class Profile(models.Model):
     
     user = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
@@ -36,7 +39,7 @@ class Event(models.Model):
     location = models.CharField(max_length=255)
     bio = models.TextField(max_length=500, blank=True)
     image = models.CharField(max_length=500, blank=True)
-    video = models.FileField(upload_to='media', blank=True)
+    music = models.FileField(upload_to=get_audio_path, blank=True)
 
     def __str__(self):
         return self.title
