@@ -13,6 +13,5 @@ How to Open App in Development:
  * python3 manage.py runserver
 
 
-WireFrames
-
-xxxxxxx
+WireFrames Link -
+https://www.figma.com/file/1jho42egKm4VR4oEQuQ9pv/Untitled?node-id=0%3A1
