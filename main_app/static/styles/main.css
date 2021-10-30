@@ -183,13 +183,18 @@ body {
 #event-form input{
   width: 100%;
   margin-bottom: 8px;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.24);
   outline: none;
+  border-radius: 0.1em;
+  padding: 4px
 }
 
 #event-form textarea{
   width: 100%;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.256);
+  outline: none;
+  border-radius: 0.1em;
+  padding: 4px
 }
 
 #welcome-txt {
@@ -247,3 +252,4 @@ color: white !important;
   margin-left: 5%;
   position: relative;
 } */
+
