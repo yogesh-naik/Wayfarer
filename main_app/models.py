@@ -14,7 +14,7 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=30, blank=False)
     last_name = models.CharField(max_length=30, blank=False)
     email = models.EmailField(max_length=50, blank=False)
-    avatar = models.ImageField(upload_to=get_image_path, default='https://github.com/yogesh-naik/Wayfarer/blob/avatar/Nitelife/main_app/static/images/user.png')
+    avatar = models.ImageField(upload_to=get_image_path, default='red_eyes.jpeg')
     birthday = models.DateField(null=True, blank=True)
     number = models.CharField(max_length=32, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)

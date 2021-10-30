@@ -4,8 +4,8 @@ and helping us with SEO {% endcomment %}
 <section>
     <div class="container mx-auto px-6">
 
-        <div class="flex p-4">
-            <img src="{{profile.avatar.url}}" class="h-40 w-40 box-full object-cover" alt="username" />
+        <div class="flex">
+            <img src="{{profile.avatar.url}}" class="h-40 w-40 box-full object-cover rounded-lg" alt="username" />
 
             <div class="ml-10">
                 <div class="flex items-center">
@@ -33,7 +33,7 @@ and helping us with SEO {% endcomment %}
     </div>
 </section>
 
-<div class="border-b-2 mb-20 divide-transparent border-opacity-20"></div>
+<div class="border-b-2 my-10 divide-transparent border-opacity-20"></div>
 <section class="mb-20">
     <div class="container mx-auto px-6">
         <div class="clearfix responsive">
@@ -42,17 +42,17 @@ and helping us with SEO {% endcomment %}
                     <div class="rounded-md overflow-hidden h-80">
                         <a class="post__card relative flex flex-col h-full" href="{% url 'event_detail' event.pk %}">
                             <img src="{{event.image}}" class="foto object-cover object-center w-full h-4/5" alt="{{event.title}}" />
-                                <div class="text-base p-2 bg-white text-center w-full relative h-1/5 two flex justify-center items-center">
-                                    <span style="color:black;">{{event.title}}</span>
+                                <div class="text-base p-2 bg-gray-800 text-center w-full relative h-1/5 two flex justify-center items-center text-white hover:text-pink-500">
+                                    <span class='w-full '>{{event.title}}</span>
                                     <span class="absolute bottom-0 left-1/2 w-0 transition-all h-1 bg-pink-500"></span>
                                     <span class="absolute bottom-0 right-1/2 w-0 transition-all h-1 bg-pink-500"></span>
                                 </div>
                         </a>
                     </div>
                     {% endfor %}
-                    <div id="create-post__card" class="rounded-md overflow-hidden h-80 bg-white hover:bg-pink-500 transition-colors">
+                    <div id="create-post__card" class="rounded-md overflow-hidden text-white h-80 bg-gray-800 hover:bg-pink-500 transition-colors">
                         <a class="post__card relative flex flex-col w-full h-full flex justify-center items-center" href="{% url 'create_event' %}">
-                            <h3 class="text-black">Create a Post +</h3>
+                            <h3>Create a Post +</h3>
                         </a>
                     </div>
 
