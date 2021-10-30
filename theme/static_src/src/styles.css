@@ -1,3 +1,251 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* :root {
+  --clr-neon : hsl(317 100% 54%);
+  --clr-bg : hsl(323 21% 16%);
+} */
+
+/* * {
+  color: rgb(131, 70, 255);
+
+} */
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+/* navigation 
+ - show navigation always on the large screen devices with (min-width:1024)
+*/
+
+body {
+    font-family: "Rubik", sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 100vh;
+}
+h1,
+h2,
+h3 {
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 48px !important;
+}
+
+h3 {
+  font-size: 24px !important;
+}
+
+#create-post__card:hover h3{
+  color: rgb(255, 196, 245);
+}
+
+.glass {
+background: rgba( 92, 14, 14, 0.2 ) !important;
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ) !important;
+backdrop-filter: blur( 13px ) !important;
+-webkit-backdrop-filter: blur( 13px ) !important;
+border-radius: 10px !important;
+border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
+color: white !important;
+}  
+
+.title {
+  color: #ffffff;
+}
+
+@media (min-width: 1024px) {
+  .top-navbar {
+    display: inline-flex !important;
+  }
+}
+
+
+#id_password {
+ display: flex;
+ border-radius: 3px;
+}
+
+#id_username {
+ display: flex;
+ border-radius: 3px;
+}
+
+
+div.w-full.max-w-lg > div.leading-loose > form.max-w-sm.m-4.p-10.bg-white.bg-opacity-25.rounded.shadow-xl > label {
+  color:white;
+}
+
+/* #navigation {
+
+
+}
+div.lg\:inline-flex:nth-child(1) {
+  font-size: 1em;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border: #ff009F 0.125em solid;
+  color: #ff009F;
+  border-radius: 0.25em;
+  text-shadow: 0 0 0.5em #ff009F;
+} */
+/* #neon-nav {
+  font-size: 1em;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border: #ff009F 0.125em solid;
+  color: #ff009F;
+  border-radius: 0.25em;
+  text-shadow: 0 0 0.5em #ff009F;
+  margin: .5em;
+
+  position:relative;
+  transition: background-color 100ms linear;
+} */
+.Navbar {
+  z-index: 999 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+
+}
+
+#neon-nav {
+  font-size: 1em;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0.25em;
+  margin: .5em;
+  position:relative;
+  transition: background-color 100ms linear;
+}
+
+#neon-button {
+ 
+  transition: background-color 100ms linear;
+}
+
+#neon-nav:hover, #neon-button:hover{
+  background-color:#ff009F;
+  color: #ffffff;
+  box-shadow: 0px 0px 5px 5px #ff009F;
+  text-shadow:
+    0 0 82px #ff009F,
+  }
+/* .top-navbar {
+  color: #ff009F;
+} */
+
+
+
+#event-card-hover:hover {
+  box-shadow: 0px 0px 5px 5px #ff009F;
+}
+
+div.px-10 > p {
+  color: red;
+}
+
+div.max-w-8xl.mx-auto.px-4.sm:px-6.lg:px-8 {
+  background: #121212;
+  opacity: 20%;
+}
+/* #nav-right-orientation {
+  float: right;
+} */
+body {
+  background-image: url('nitelife-bg.jpg');
+  /* width: 100%;
+  height: auto; */
+  background-size: cover;
+  padding-top: 80px;
+}
+
+/* #event-form > p{
+  width: 100%;
+  background-color: tomato;
+} */
+#event-form label{
+  margin-bottom: 4px;
+}
+
+#event-form input{
+  width: 100%;
+  margin-bottom: 8px;
+  background-color: transparent;
+  outline: none;
+}
+
+#event-form textarea{
+  width: 100%;
+  background-color: transparent;
+}
+
+#welcome-txt {
+  font: Satoshi;
+  font-weight:700;
+  font-size: 144px;
+  line-height: 1.1;
+}
+
+/* #welcome-para {
+  padding-top:1em;
+  font: Nimbus Sans;
+  font-weight:400;
+
+
+} */
+
+/* body > div > div > div.flex.justify-center.pb-10 {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+body > div > div > div > article > div > a > img{
+  margin-left: 5%;
+  margin-right: 5%;
+} */
+
+
+.glass-header {
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ) !important;
+backdrop-filter: blur( 13px ) !important;
+-webkit-backdrop-filter: blur( 13px ) !important;
+border-radius: 0px !important;
+border: 0px solid rgba( 255, 255, 255, 0.18 ) !important;
+color: white !important;
+}  
+
+/* .post__card:hover span:last-child {
+  width: 50%;
+} */
+
+.post__card:hover span {
+  width: 50%;
+}
+
+/* .three:hover span {
+  height: 100%;
+} */
+
+/* div.cursor-pointer.relative {
+  width: 30vw;
+  height: 2vh;
+  margin-left: 5%;
+  position: relative;
+} */
