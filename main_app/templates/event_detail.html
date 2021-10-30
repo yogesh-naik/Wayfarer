@@ -31,9 +31,9 @@
           {% if event.video == None %}
           <p>No video available</p>
           {% else %}
-          <video controls>
-            <source src="{{event.video.url}}" type="audio/mp4">
-          </video>
+          <audio controls>
+            <source src="{{event.video.url}}" type="audio/wav">
+          </audio>
           <br>
       </div>
       {% endif %}

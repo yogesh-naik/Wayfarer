@@ -1,5 +1,5 @@
 import os
-import dj_database_url
+
 """
 Django settings for Nitelife project.
 
@@ -86,7 +86,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
 
 
 
@@ -157,9 +157,6 @@ MEDIA_URL = '/media/'
 # Path where media is stored</span>
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-
-
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 STATIC_ROOT = '../collect_static'
 

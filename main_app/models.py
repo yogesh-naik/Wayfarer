@@ -36,7 +36,7 @@ class Event(models.Model):
     location = models.CharField(max_length=255)
     bio = models.TextField(max_length=500, blank=True)
     image = models.CharField(max_length=500, blank=True)
-    video = models.FileField(upload_to='media/video', blank=True)
+    video = models.FileField(upload_to='media', blank=True)
 
     def __str__(self):
         return self.title

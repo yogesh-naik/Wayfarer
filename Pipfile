@@ -12,8 +12,8 @@ setuptools = "*"
 whitenoise = "*"
 psycopg2 = "*"
 django-heroku = "*"
-django-tailwind = "*"
 pillow = "*"
+django-tailwind = "*"
 
 [dev-packages]
 
