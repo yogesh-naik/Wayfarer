@@ -196,11 +196,20 @@ body {
   padding: 4px
 }
 
+
+#music-clear_id {
+  display: none;
+}
+
 #welcome-txt {
   font: Satoshi;
   font-weight:700;
   font-size: 144px;
   line-height: 1.1;
+}
+
+label[for='music-clear_id']{
+  display: block;
 }
 
 /* #welcome-para {
@@ -255,3 +264,4 @@ color: white !important;
 .hover-pink:hover {
   color:#ff009F !important;
 }
+
