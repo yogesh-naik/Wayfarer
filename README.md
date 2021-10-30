@@ -2,7 +2,7 @@
 
 #YogeshNaik <br />
 #Makai Harris <br />
-#Dominque Thomas v
+#Dominque Thomas <br />
 #James Chandler<br />
 #Chris Ladd<br />
 
