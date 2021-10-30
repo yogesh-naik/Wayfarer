@@ -37,9 +37,11 @@ h2 {
   font-size: 48px !important;
 }
 
+
 h3 {
   font-size: 24px !important;
 }
+
 
 #create-post__card:hover h3{
   color: rgb(255, 196, 245);
