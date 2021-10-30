@@ -5,5 +5,5 @@ from django.contrib.staticfiles.management.commands.collectstatic import (
 
 class Command(CollectStaticCommand):
     def handle(self, *args, **options):
-        call_command("tailwind", "build")
+        call_command("npm","run", "build")
         super().handle(*args, **options)
