@@ -152,10 +152,10 @@ REST_FRAMEWORK = {
 }
 
 # Base url to serve media files
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 
-# Path where media is stored</span>
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 STATIC_ROOT = '../collect_static'
