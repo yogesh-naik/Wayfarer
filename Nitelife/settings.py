@@ -1,5 +1,5 @@
 import os
-
+import dj_database_url
 """
 Django settings for Nitelife project.
 
@@ -152,13 +152,31 @@ REST_FRAMEWORK = {
 }
 
 # Base url to serve media files
-MEDIA_URL = 'media/'
+# MEDIA_URL = 'media/'
 
-# Path where media is stored
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# # Path where media is stored
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-STATIC_ROOT = '../collect_static'
+# STATIC_ROOT = '../collect_static'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+#for static files(CSS)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+MIDDLEWARE_CLASSES = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+]
+
+
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
