@@ -62,7 +62,7 @@ class SignUp(View):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('/profile')
+            return redirect('/profile/')
         else:
             context = {'form': form}
             return render(request, 'registration/signup.html', context)
@@ -76,7 +76,7 @@ def profile(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Your account has been updated!')
-            return redirect('profile')
+            return redirect('/profile/')
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
