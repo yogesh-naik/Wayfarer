@@ -1,5 +1,5 @@
 import os
-
+import dj_database_url
 """
 Django settings for Nitelife project.
 
@@ -176,3 +176,7 @@ STATICFILES_DIRS = [
 MIDDLEWARE_CLASSES = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
